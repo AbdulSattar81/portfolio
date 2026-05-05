@@ -1,0 +1,1532 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="dark light" />
+<title>Abdul Sattar Mohammed — Cloud & DevOps Engineer · AWS, Terraform, Kubernetes</title>
+<meta name="description" content="Cloud & DevOps Engineer based in Houston, TX. I build production-grade AWS infrastructure with Terraform, Kubernetes, and CI/CD. AWS-certified (CCP, SAA). Open to remote and relocation." />
+<meta name="author" content="Abdul Sattar Mohammed" />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Abdul Sattar Mohammed — Cloud & DevOps Engineer" />
+<meta property="og:description" content="AWS · Terraform · Kubernetes · Linux. I architect production-grade cloud infrastructure. Available for Cloud / DevOps roles." />
+<meta property="og:locale" content="en_US" />
+<meta property="profile:first_name" content="Abdul Sattar" />
+<meta property="profile:last_name" content="Mohammed" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Abdul Sattar Mohammed — Cloud & DevOps Engineer" />
+<meta name="twitter:description" content="AWS · Terraform · Kubernetes. Production-grade cloud infrastructure." />
+<link rel="canonical" href="https://sattar.cloud/" />
+<link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="%23ff9900"/><path d="M9 11h14M9 16h14M9 21h9" stroke="%230a0a0c" stroke-width="2.5" stroke-linecap="round"/></svg>' />
+<link rel="apple-touch-icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="%23ff9900"/><path d="M9 11h14M9 16h14M9 21h9" stroke="%230a0a0c" stroke-width="2.5" stroke-linecap="round"/></svg>' />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abdul Sattar Mohammed",
+  "jobTitle": "Cloud & DevOps Engineer",
+  "description": "Cloud & DevOps Engineer specializing in AWS, Terraform, Kubernetes, and infrastructure automation.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX", "addressCountry": "US" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Campbellsville University" },
+    { "@type": "CollegeOrUniversity", "name": "Osmania University" }
+  ],
+  "knowsAbout": ["AWS","Terraform","Kubernetes","Ansible","Linux","DevOps","CI/CD","GitLab CI","Docker","Prometheus"],
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "name": "AWS Certified Cloud Practitioner" },
+    { "@type": "EducationalOccupationalCredential", "name": "AWS Certified Solutions Architect — Associate" }
+  ],
+  "email": "mailto:masattar0782@gmail.com",
+  "telephone": "+1-346-714-4279"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" />
+<style>
+:root {
+  --s-1:.25rem;--s-2:.5rem;--s-3:.75rem;--s-4:1rem;--s-5:1.25rem;--s-6:1.5rem;
+  --s-8:2rem;--s-10:2.5rem;--s-12:3rem;--s-16:4rem;--s-20:5rem;--s-24:6rem;--s-32:8rem;
+  --r-1:4px;--r-2:6px;--r-3:10px;--r-4:14px;--r-5:20px;--r-full:999px;
+  --maxw:1200px;--gutter:clamp(1.25rem,4vw,2.5rem);
+  --f-sans:'Manrope',ui-sans-serif,system-ui,-apple-system,sans-serif;
+  --f-serif:'Instrument Serif',ui-serif,Georgia,serif;
+  --f-mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  --ease-out:cubic-bezier(.16,1,.3,1);--ease-in-out:cubic-bezier(.65,0,.35,1);
+  --aws:#ff9900;
+}
+:root[data-theme="dark"]{
+  --bg:#0a0a0c;--bg-elev:#111114;--bg-elev-2:#161619;--surface:#131317;--surface-h:#1a1a1f;
+  --line:#232328;--line-strong:#2e2e35;
+  --text:#f5f5f7;--text-soft:#a1a1aa;--text-faint:#71717a;--text-dim:#52525b;
+  --accent:#ff9900;--accent-soft:rgba(255,153,0,.12);--accent-faint:rgba(255,153,0,.06);--accent-glow:rgba(255,153,0,.22);
+  --green:#4ade80;--cyan:#4dd2ff;--violet:#a78bfa;--rose:#ff5e87;
+  --shadow-1:0 1px 2px rgba(0,0,0,.4);--shadow-2:0 8px 24px rgba(0,0,0,.5);--shadow-3:0 24px 48px -12px rgba(0,0,0,.6);
+  --grid-line:rgba(255,255,255,.025);
+}
+:root[data-theme="light"]{
+  --bg:#fafaf7;--bg-elev:#ffffff;--bg-elev-2:#f5f4ee;--surface:#ffffff;--surface-h:#f7f6ef;
+  --line:#e6e4d9;--line-strong:#d4d2c4;
+  --text:#0a0a0a;--text-soft:#404040;--text-faint:#6b6b6b;--text-dim:#9c9c9c;
+  --accent:#c2410c;--accent-soft:rgba(194,65,12,.08);--accent-faint:rgba(194,65,12,.04);--accent-glow:rgba(194,65,12,.18);
+  --green:#16a34a;--cyan:#0891b2;--violet:#7c3aed;--rose:#be123c;
+  --shadow-1:0 1px 2px rgba(0,0,0,.04);--shadow-2:0 8px 24px rgba(0,0,0,.06);--shadow-3:0 24px 48px -12px rgba(0,0,0,.08);
+  --grid-line:rgba(0,0,0,.04);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;tab-size:4}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+body{font-family:var(--f-sans);font-weight:400;font-size:16px;line-height:1.6;color:var(--text);background:var(--bg);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-feature-settings:"ss01","cv11";transition:background .3s var(--ease-out),color .3s var(--ease-out)}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:var(--bg)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3,h4{font-family:var(--f-sans);font-weight:700;letter-spacing:-.02em;line-height:1.1;color:var(--text)}
+h1{letter-spacing:-.035em}
+.mono{font-family:var(--f-mono);font-feature-settings:"calt","ss01"}
+.serif-italic{font-family:var(--f-serif);font-style:italic;font-weight:400;letter-spacing:0}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 900px 500px at 12% -8%,var(--accent-glow),transparent 60%),radial-gradient(ellipse 700px 400px at 92% 18%,color-mix(in oklab,var(--cyan) 18%,transparent),transparent 60%);opacity:.35}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(to right,var(--grid-line) 1px,transparent 1px),linear-gradient(to bottom,var(--grid-line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at center,black 10%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at center,black 10%,transparent 75%)}
+.skip-link{position:fixed;top:-100px;left:var(--s-4);z-index:1000;padding:var(--s-3) var(--s-5);background:var(--accent);color:#0a0a0c;font-family:var(--f-mono);font-size:.82rem;font-weight:600;border-radius:var(--r-2);transition:top .25s var(--ease-out)}
+.skip-link:focus{top:var(--s-4)}
+.scroll-progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--accent),color-mix(in oklab,var(--accent) 50%,transparent));z-index:200;transition:width .08s linear}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:var(--s-4) var(--gutter);display:flex;align-items:center;justify-content:space-between;background:color-mix(in oklab,var(--bg) 75%,transparent);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid transparent;transition:border-color .2s,background .2s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav-brand{display:flex;align-items:center;gap:var(--s-3);font-family:var(--f-mono);font-size:.82rem;font-weight:500;color:var(--text)}
+.nav-brand-mark{width:26px;height:26px;border-radius:6px;background:var(--accent);color:#0a0a0c;display:grid;place-items:center;font-family:var(--f-sans);font-weight:800;font-size:.82rem;letter-spacing:-.02em}
+.nav-brand-status{display:inline-flex;align-items:center;gap:6px;color:var(--text-soft)}
+.nav-brand-status::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
+.nav-links{display:flex;align-items:center;gap:var(--s-2);list-style:none}
+.nav-links a{font-family:var(--f-mono);font-size:.78rem;font-weight:400;color:var(--text-soft);padding:var(--s-2) var(--s-3);border-radius:var(--r-2);transition:color .15s,background .15s}
+.nav-links a:hover{color:var(--text);background:var(--surface-h)}
+.nav-links a.active{color:var(--accent)}
+.nav-actions{display:flex;align-items:center;gap:var(--s-2)}
+.cmd-trigger{display:inline-flex;align-items:center;gap:var(--s-3);padding:var(--s-2) var(--s-3);font-family:var(--f-mono);font-size:.76rem;color:var(--text-faint);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-2);transition:border-color .15s,color .15s}
+.cmd-trigger:hover{color:var(--text);border-color:var(--line-strong)}
+.cmd-trigger kbd{font-family:var(--f-mono);font-size:.7rem;padding:2px 6px;border:1px solid var(--line);border-radius:4px;color:var(--text-soft);background:var(--bg-elev-2)}
+.theme-toggle{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);border-radius:var(--r-2);color:var(--text-soft);background:var(--surface);transition:color .15s,border-color .15s}
+.theme-toggle:hover{color:var(--text);border-color:var(--line-strong)}
+.theme-toggle svg{width:16px;height:16px}
+:root[data-theme="dark"] .icon-sun{display:block}
+:root[data-theme="dark"] .icon-moon{display:none}
+:root[data-theme="light"] .icon-sun{display:none}
+:root[data-theme="light"] .icon-moon{display:block}
+.nav-toggle{display:none;width:36px;height:36px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:var(--r-2);color:var(--text)}
+.nav-toggle svg{width:18px;height:18px}
+.container{max-width:var(--maxw);margin:0 auto;width:100%}
+.section{padding:var(--s-32) var(--gutter) var(--s-24);position:relative;z-index:1}
+.section-header{display:flex;align-items:baseline;gap:var(--s-6);margin-bottom:var(--s-16);flex-wrap:wrap}
+.section-eyebrow{font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);display:inline-flex;align-items:center;gap:var(--s-2)}
+.section-eyebrow::before{content:'';width:24px;height:1px;background:var(--accent)}
+.section-title{font-size:clamp(2rem,4.2vw,3rem);font-weight:700;letter-spacing:-.03em}
+.section-line{flex:1 1 100px;height:1px;background:var(--line)}
+.hero{min-height:100vh;padding:calc(var(--s-32) + var(--s-8)) var(--gutter) var(--s-16);display:flex;align-items:center;position:relative;z-index:1}
+.hero-inner{max-width:var(--maxw);margin:0 auto;width:100%;display:grid;grid-template-columns:1.45fr 1fr;gap:var(--s-16);align-items:center}
+.hero-pill{display:inline-flex;align-items:center;gap:var(--s-2);padding:6px var(--s-3);border:1px solid var(--line);border-radius:var(--r-full);font-family:var(--f-mono);font-size:.74rem;color:var(--text-soft);background:var(--surface);margin-bottom:var(--s-8);animation:rise .9s var(--ease-out) both}
+.hero-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)}
+.hero-h1{font-size:clamp(2.6rem,6.8vw,5.4rem);font-weight:800;letter-spacing:-.045em;line-height:1;margin-bottom:var(--s-6);color:var(--text);animation:rise 1s .05s var(--ease-out) both}
+.hero-h1 .accent{color:var(--accent)}
+.hero-tagline{font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.4;color:var(--text-soft);max-width:36ch;margin-bottom:var(--s-8);font-weight:400;animation:rise 1s .15s var(--ease-out) both}
+.hero-tagline em{font-family:var(--f-serif);font-style:italic;font-weight:400;color:var(--text);font-size:1.12em;letter-spacing:0}
+.hero-meta{display:grid;grid-template-columns:repeat(3,auto);gap:var(--s-4) var(--s-8);margin-bottom:var(--s-10);font-family:var(--f-mono);font-size:.8rem;animation:rise 1s .25s var(--ease-out) both}
+.hero-meta-item{display:flex;flex-direction:column;gap:2px}
+.hero-meta-item .k{color:var(--text-faint);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}
+.hero-meta-item .v{color:var(--text);font-weight:500}
+.hero-cta{display:flex;gap:var(--s-3);flex-wrap:wrap;animation:rise 1s .35s var(--ease-out) both}
+.btn{display:inline-flex;align-items:center;gap:var(--s-2);padding:var(--s-3) var(--s-5);border-radius:var(--r-2);font-family:var(--f-sans);font-size:.9rem;font-weight:500;border:1px solid transparent;transition:transform .15s var(--ease-out),background .15s,border-color .15s,color .15s,box-shadow .2s}
+.btn-primary{background:var(--accent);color:#0a0a0c;font-weight:600}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 24px var(--accent-glow)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--line-strong)}
+.btn-ghost:hover{border-color:var(--text-soft);background:var(--surface)}
+.btn svg{width:14px;height:14px}
+.btn .arrow{transition:transform .2s var(--ease-out)}
+.btn:hover .arrow{transform:translateX(3px)}
+.hero-socials{display:flex;gap:var(--s-2);align-items:center;margin-top:var(--s-6);animation:rise 1s .45s var(--ease-out) both}
+.hero-socials a{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);border-radius:var(--r-2);color:var(--text-soft);transition:color .15s,border-color .15s,transform .15s}
+.hero-socials a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+.hero-socials a svg{width:16px;height:16px}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.sys-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-4);overflow:hidden;box-shadow:var(--shadow-3);animation:rise 1.1s .3s var(--ease-out) both}
+.sys-head{display:flex;align-items:center;justify-content:space-between;padding:var(--s-3) var(--s-5);border-bottom:1px solid var(--line);background:var(--bg-elev)}
+.sys-head-title{font-family:var(--f-mono);font-size:.76rem;color:var(--text-soft);display:flex;align-items:center;gap:var(--s-2)}
+.sys-head-title::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)}
+.sys-head-tag{font-family:var(--f-mono);font-size:.7rem;color:var(--text-faint);padding:2px var(--s-2);border:1px solid var(--line);border-radius:var(--r-1)}
+.sys-body{padding:var(--s-5)}
+.sys-row{display:grid;grid-template-columns:90px 1fr auto;gap:var(--s-3);align-items:center;padding:var(--s-3) 0;border-bottom:1px dashed var(--line);font-family:var(--f-mono);font-size:.82rem}
+.sys-row:last-child{border-bottom:0}
+.sys-row .k{color:var(--text-faint)}
+.sys-row .v{color:var(--text)}
+.sys-row .badge{font-size:.68rem;padding:2px var(--s-2);border-radius:var(--r-1);background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent-soft)}
+.sys-bar{margin-top:var(--s-4);padding-top:var(--s-4);border-top:1px solid var(--line);display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:.72rem;color:var(--text-faint)}
+.sys-bar span:nth-child(2){color:var(--green)}
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-elev);padding:var(--s-6) 0;overflow:hidden;position:relative;z-index:1;mask-image:linear-gradient(90deg,transparent 0%,black 12%,black 88%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,black 12%,black 88%,transparent 100%)}
+.marquee-track{display:flex;gap:var(--s-12);animation:scroll 40s linear infinite;width:max-content}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-item{display:flex;align-items:center;gap:var(--s-3);font-family:var(--f-mono);font-size:.85rem;color:var(--text-soft);white-space:nowrap}
+.marquee-item::after{content:'·';color:var(--text-dim);margin-left:var(--s-12)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.stats{position:relative;z-index:1;border-bottom:1px solid var(--line)}
+.stats-inner{max-width:var(--maxw);margin:0 auto;padding:var(--s-12) var(--gutter)}
+.stats-lede{font-family:var(--f-mono);font-size:.76rem;color:var(--text-faint);text-transform:uppercase;letter-spacing:.12em;margin-bottom:var(--s-8);display:flex;align-items:center;gap:var(--s-3)}
+.stats-lede::before{content:'';width:24px;height:1px;background:var(--text-faint)}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat{padding:var(--s-2) var(--s-6) var(--s-2) 0;position:relative;border-right:1px solid var(--line)}
+.stat:nth-child(1){padding-left:0}
+.stat:nth-child(4){border-right:0;padding-right:0}
+.stat-num{font-family:var(--f-sans);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--text);margin-bottom:var(--s-3);display:flex;align-items:baseline;gap:4px}
+.stat-num .unit{color:var(--accent);font-size:.55em;font-weight:700}
+.stat-label{font-family:var(--f-mono);font-size:.76rem;color:var(--text-soft);line-height:1.5}
+.stat-source{font-family:var(--f-mono);font-size:.68rem;color:var(--text-dim);margin-top:var(--s-2)}
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:var(--s-12);align-items:start}
+.about-text p{color:var(--text-soft);font-size:1.05rem;line-height:1.7;margin-bottom:var(--s-5);font-weight:400}
+.about-text strong{color:var(--text);font-weight:600}
+.about-text .hl{color:var(--text);background:linear-gradient(180deg,transparent 60%,var(--accent-soft) 60%);padding:0 4px}
+.about-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-4);padding:var(--s-8);position:relative}
+.about-card::before{content:'';position:absolute;top:0;left:var(--s-8);right:var(--s-8);height:2px;background:var(--accent);border-radius:2px}
+.about-card-title{font-family:var(--f-mono);font-size:.74rem;color:var(--text-faint);text-transform:uppercase;letter-spacing:.1em;margin-bottom:var(--s-5)}
+.about-card-row{display:flex;justify-content:space-between;align-items:center;padding:var(--s-3) 0;border-bottom:1px dashed var(--line);font-size:.9rem}
+.about-card-row:last-child{border-bottom:0}
+.about-card-row .k{font-family:var(--f-mono);font-size:.76rem;color:var(--text-faint)}
+.about-card-row .v{color:var(--text);font-weight:500}
+.projects-toolbar{display:flex;flex-wrap:wrap;gap:var(--s-2);align-items:center;margin-bottom:var(--s-8);padding-bottom:var(--s-6);border-bottom:1px solid var(--line)}
+.projects-toolbar-label{font-family:var(--f-mono);font-size:.72rem;color:var(--text-faint);text-transform:uppercase;letter-spacing:.1em;margin-right:var(--s-3)}
+.filter-chip{font-family:var(--f-mono);font-size:.78rem;padding:var(--s-2) var(--s-4);border:1px solid var(--line);border-radius:var(--r-full);color:var(--text-soft);background:transparent;transition:all .15s var(--ease-out)}
+.filter-chip:hover{color:var(--text);border-color:var(--line-strong)}
+.filter-chip.active{background:var(--accent);color:#0a0a0c;border-color:var(--accent)}
+.filter-chip .count{opacity:.55;margin-left:4px}
+.project{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-4);overflow:hidden;margin-bottom:var(--s-6);transition:border-color .25s,transform .25s,box-shadow .25s,opacity .3s;position:relative}
+.project:hover{border-color:var(--line-strong);transform:translateY(-2px);box-shadow:var(--shadow-2)}
+.project.hidden{display:none}
+.project-grid{display:grid;grid-template-columns:1fr 1.1fr;min-height:460px}
+.project-info{padding:var(--s-10) var(--s-10) var(--s-8);display:flex;flex-direction:column;justify-content:space-between}
+.project-tag{display:inline-flex;align-items:center;gap:var(--s-2);font-family:var(--f-mono);font-size:.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:var(--s-4)}
+.project-tag::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%}
+.project-title{font-family:var(--f-sans);font-size:clamp(1.4rem,2.4vw,1.8rem);font-weight:700;letter-spacing:-.025em;line-height:1.15;color:var(--text);margin-bottom:var(--s-4)}
+.project-desc{color:var(--text-soft);font-size:.96rem;line-height:1.65;margin-bottom:var(--s-6)}
+.project-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s-3) var(--s-4);margin-bottom:var(--s-6);padding:var(--s-4) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.metric{padding:0}
+.metric-num{font-family:var(--f-sans);font-size:1.35rem;font-weight:700;letter-spacing:-.02em;color:var(--accent);line-height:1.1;margin-bottom:2px}
+.metric-label{font-family:var(--f-mono);font-size:.68rem;color:var(--text-faint);text-transform:uppercase;letter-spacing:.04em;line-height:1.4}
+.project-stack{display:flex;flex-wrap:wrap;gap:var(--s-2);margin-bottom:var(--s-6)}
+.chip{font-family:var(--f-mono);font-size:.7rem;padding:4px var(--s-3);border:1px solid var(--line);border-radius:var(--r-full);color:var(--text-soft);background:var(--bg-elev-2)}
+.project-cta{display:flex;gap:var(--s-2);flex-wrap:wrap}
+.project-cta a{display:inline-flex;align-items:center;gap:var(--s-2);padding:var(--s-2) var(--s-4);font-family:var(--f-mono);font-size:.76rem;color:var(--text-soft);border:1px solid var(--line);border-radius:var(--r-2);transition:color .15s,border-color .15s}
+.project-cta a:hover{color:var(--accent);border-color:var(--accent)}
+.project-cta a svg{width:14px;height:14px}
+.project-diagram{background:radial-gradient(ellipse at top right,var(--accent-faint),transparent 50%),var(--bg-elev);padding:var(--s-8);display:flex;align-items:center;justify-content:center;border-left:1px solid var(--line);position:relative;overflow:hidden}
+.project-diagram::before{content:'';position:absolute;inset:0;background-image:linear-gradient(to right,var(--grid-line) 1px,transparent 1px),linear-gradient(to bottom,var(--grid-line) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
+.project-diagram svg{width:100%;height:auto;max-width:100%;position:relative;z-index:1}
+.svg-text{font-family:var(--f-mono);font-size:10px;fill:var(--text)}
+.svg-text-sm{font-family:var(--f-mono);font-size:8px;fill:var(--text-soft)}
+.svg-text-tiny{font-family:var(--f-mono);font-size:7px;fill:var(--text-faint)}
+.svg-text-aws{font-family:var(--f-mono);font-size:9px;fill:var(--accent);font-weight:600}
+.svg-text-cyan{font-family:var(--f-mono);font-size:9px;fill:var(--cyan);font-weight:600}
+.svg-box{fill:var(--surface);stroke:var(--line-strong);stroke-width:1}
+.svg-box-aws{fill:var(--surface);stroke:var(--accent);stroke-width:1.5}
+.svg-box-cyan{fill:var(--surface);stroke:var(--cyan);stroke-width:1.5}
+.svg-region{fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:4 3}
+.svg-vpc{fill:color-mix(in oklab,var(--violet) 4%,transparent);stroke:var(--violet);stroke-width:1;stroke-dasharray:4 3}
+.svg-az-pub{fill:color-mix(in oklab,var(--green) 4%,transparent);stroke:var(--green);stroke-width:.8;stroke-dasharray:3 2}
+.svg-az-pri{fill:color-mix(in oklab,var(--cyan) 4%,transparent);stroke:var(--cyan);stroke-width:.8;stroke-dasharray:3 2}
+.svg-line{stroke:var(--line-strong);stroke-width:1;fill:none}
+.svg-line-flow{stroke:var(--accent);stroke-width:1.2;fill:none}
+.svg-line-data{stroke:var(--cyan);stroke-width:1.2;fill:none;stroke-dasharray:3 2}
+.exp-timeline{position:relative;padding-left:var(--s-8)}
+.exp-timeline::before{content:'';position:absolute;left:8px;top:12px;bottom:12px;width:1px;background:var(--line)}
+.exp{position:relative;margin-bottom:var(--s-6);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-4);overflow:hidden;transition:border-color .2s}
+.exp::before{content:'';position:absolute;left:calc(-1 * var(--s-8) + 4px);top:var(--s-6);width:9px;height:9px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 4px var(--bg)}
+.exp:hover{border-color:var(--line-strong)}
+.exp-head{padding:var(--s-6) var(--s-8);cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:var(--s-6);align-items:center;user-select:none}
+.exp-head:hover{background:var(--surface-h)}
+.exp-meta{display:flex;align-items:center;gap:var(--s-4);font-family:var(--f-mono);font-size:.74rem;color:var(--accent);margin-bottom:var(--s-2);text-transform:uppercase;letter-spacing:.06em}
+.exp-meta .duration{color:var(--text-faint)}
+.exp-title{font-family:var(--f-sans);font-size:1.2rem;font-weight:600;letter-spacing:-.02em;color:var(--text);margin-bottom:var(--s-1)}
+.exp-company{font-family:var(--f-mono);font-size:.85rem;color:var(--text-soft)}
+.exp-toggle{width:32px;height:32px;display:grid;place-items:center;border:1px solid var(--line);border-radius:var(--r-2);color:var(--accent);font-size:1.2rem;font-weight:300;transition:transform .25s var(--ease-out),background .15s}
+.exp.open .exp-toggle{transform:rotate(45deg);background:var(--accent-soft)}
+.exp-body{max-height:0;overflow:hidden;transition:max-height .45s var(--ease-out)}
+.exp.open .exp-body{max-height:4000px}
+.exp-body-inner{padding:0 var(--s-8) var(--s-8);border-top:1px dashed var(--line);padding-top:var(--s-6)}
+.exp-list{list-style:none;display:grid;gap:var(--s-3)}
+.exp-list li{color:var(--text-soft);font-size:.94rem;line-height:1.6;padding-left:var(--s-6);position:relative}
+.exp-list li::before{content:'▸';position:absolute;left:0;top:0;color:var(--accent);font-size:.8rem}
+.exp-list li strong{color:var(--text);font-weight:600}
+.exp-list li code{font-family:var(--f-mono);font-size:.85em;color:var(--accent);padding:1px 4px;background:var(--accent-faint);border-radius:3px}
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-4)}
+.skill-cat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-3);padding:var(--s-6);transition:border-color .2s,transform .2s}
+.skill-cat:hover{border-color:var(--line-strong);transform:translateY(-1px)}
+.skill-cat-head{display:flex;align-items:center;gap:var(--s-3);margin-bottom:var(--s-5);padding-bottom:var(--s-3);border-bottom:1px solid var(--line)}
+.skill-cat-icon{width:28px;height:28px;border-radius:var(--r-2);background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-family:var(--f-mono);font-size:.68rem;font-weight:600}
+.skill-cat h4{font-family:var(--f-sans);font-size:.92rem;font-weight:600;letter-spacing:-.01em;color:var(--text)}
+.skill-cat-sub{font-family:var(--f-mono);font-size:.68rem;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+.skill-list{display:flex;flex-wrap:wrap;gap:var(--s-2)}
+.skill-list span{font-family:var(--f-mono);font-size:.72rem;padding:4px var(--s-2);background:var(--bg-elev-2);border:1px solid var(--line);color:var(--text);border-radius:var(--r-1);transition:all .15s var(--ease-out)}
+.skill-list span:hover{background:var(--accent);color:#0a0a0c;border-color:var(--accent);transform:translateY(-1px)}
+.cred-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s-4);margin-bottom:var(--s-12)}
+.cert{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-3);padding:var(--s-6);display:flex;align-items:center;gap:var(--s-5);transition:border-color .2s,transform .2s;position:relative;overflow:hidden}
+.cert:hover{border-color:var(--accent);transform:translateY(-2px)}
+.cert::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
+.cert-badge{width:56px;height:56px;flex-shrink:0;border-radius:var(--r-2);background:linear-gradient(135deg,var(--accent),color-mix(in oklab,var(--accent) 65%,black));display:grid;place-items:center;color:#0a0a0c;font-family:var(--f-sans);font-weight:800;font-size:1.1rem;letter-spacing:-.02em;box-shadow:0 6px 16px var(--accent-glow)}
+.cert-info h4{font-family:var(--f-sans);font-size:.98rem;font-weight:600;letter-spacing:-.01em;color:var(--text);margin-bottom:2px}
+.cert-info p{font-family:var(--f-mono);font-size:.72rem;color:var(--text-faint)}
+.edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s-4)}
+.edu{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--r-3);padding:var(--s-6);transition:border-color .2s}
+.edu:hover{border-color:var(--accent)}
+.edu-degree{font-family:var(--f-sans);font-size:1.05rem;font-weight:600;letter-spacing:-.015em;color:var(--text);margin-bottom:var(--s-2)}
+.edu-school{color:var(--text-soft);font-size:.92rem;margin-bottom:var(--s-3)}
+.edu-meta{font-family:var(--f-mono);font-size:.74rem;color:var(--text-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--s-2);padding-top:var(--s-3);border-top:1px dashed var(--line)}
+.edu-gpa{color:var(--accent);font-weight:600}
+.contact{text-align:center;padding:var(--s-32) var(--gutter);position:relative;z-index:1;border-top:1px solid var(--line)}
+.contact-eyebrow{font-family:var(--f-mono);font-size:.76rem;color:var(--accent);text-transform:uppercase;letter-spacing:.12em;margin-bottom:var(--s-6)}
+.contact-title{font-size:clamp(2.2rem,5.5vw,4rem);font-weight:700;letter-spacing:-.035em;line-height:1.1;margin-bottom:var(--s-6);max-width:18ch;margin-inline:auto}
+.contact-title em{font-family:var(--f-serif);font-style:italic;font-weight:400;color:var(--accent);letter-spacing:0}
+.contact-sub{color:var(--text-soft);font-size:1.05rem;max-width:540px;margin:0 auto var(--s-10)}
+.contact-cta{display:flex;gap:var(--s-3);justify-content:center;flex-wrap:wrap;margin-bottom:var(--s-12)}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-4);max-width:880px;margin:0 auto}
+.contact-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-3);padding:var(--s-6);text-align:left;transition:border-color .2s,transform .2s}
+.contact-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.contact-card-label{font-family:var(--f-mono);font-size:.7rem;color:var(--text-faint);text-transform:uppercase;letter-spacing:.1em;margin-bottom:var(--s-2)}
+.contact-card-val{font-family:var(--f-mono);font-size:.92rem;color:var(--text);font-weight:500;word-break:break-word}
+.footer{padding:var(--s-8) var(--gutter);border-top:1px solid var(--line);background:var(--bg-elev);position:relative;z-index:1}
+.footer-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:var(--s-4);flex-wrap:wrap;font-family:var(--f-mono);font-size:.76rem;color:var(--text-faint)}
+.footer a{color:var(--text-soft);transition:color .15s}
+.footer a:hover{color:var(--accent)}
+.footer-status{display:inline-flex;align-items:center;gap:var(--s-2)}
+.footer-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)}
+.cmdk-overlay{position:fixed;inset:0;z-index:500;display:none;align-items:flex-start;justify-content:center;padding-top:12vh;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);animation:fadeIn .15s var(--ease-out)}
+.cmdk-overlay.open{display:flex}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.cmdk{width:min(580px,92vw);background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--r-4);box-shadow:var(--shadow-3);overflow:hidden;animation:cmdkRise .2s var(--ease-out)}
+@keyframes cmdkRise{from{opacity:0;transform:translateY(-12px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.cmdk-input-wrap{display:flex;align-items:center;gap:var(--s-3);padding:var(--s-4) var(--s-5);border-bottom:1px solid var(--line)}
+.cmdk-input-wrap svg{width:16px;height:16px;color:var(--text-faint);flex-shrink:0}
+.cmdk-input{flex:1;border:0;outline:0;background:transparent;color:var(--text);font-family:var(--f-sans);font-size:1rem}
+.cmdk-input::placeholder{color:var(--text-faint)}
+.cmdk-input-wrap kbd{font-family:var(--f-mono);font-size:.7rem;padding:2px 6px;border:1px solid var(--line);border-radius:4px;color:var(--text-faint);background:var(--bg-elev-2)}
+.cmdk-list{max-height:360px;overflow-y:auto;padding:var(--s-2)}
+.cmdk-group-label{font-family:var(--f-mono);font-size:.68rem;color:var(--text-faint);text-transform:uppercase;letter-spacing:.1em;padding:var(--s-3) var(--s-4) var(--s-2)}
+.cmdk-item{display:flex;align-items:center;gap:var(--s-3);padding:var(--s-3) var(--s-4);border-radius:var(--r-2);cursor:pointer;font-size:.92rem;color:var(--text-soft);transition:background .1s,color .1s}
+.cmdk-item:hover,.cmdk-item.active{background:var(--surface-h);color:var(--text)}
+.cmdk-item-icon{width:20px;height:20px;display:grid;place-items:center;color:var(--accent)}
+.cmdk-item-icon svg{width:14px;height:14px}
+.cmdk-item-shortcut{margin-left:auto;font-family:var(--f-mono);font-size:.7rem;color:var(--text-faint)}
+.cmdk-empty{padding:var(--s-8) var(--s-4);text-align:center;color:var(--text-faint);font-family:var(--f-mono);font-size:.85rem}
+.cmdk-foot{padding:var(--s-3) var(--s-4);border-top:1px solid var(--line);display:flex;gap:var(--s-4);justify-content:flex-end;font-family:var(--f-mono);font-size:.7rem;color:var(--text-faint)}
+.cmdk-foot kbd{font-family:var(--f-mono);padding:1px 5px;border:1px solid var(--line);border-radius:3px;background:var(--bg-elev-2);color:var(--text-soft);margin:0 3px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;gap:var(--s-12)}
+  .hero-meta{grid-template-columns:repeat(3,1fr)}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .stat{padding:var(--s-4);border-right:0}
+  .stat:nth-child(2n){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line);padding-bottom:var(--s-6)}
+  .stat:nth-child(n+3){padding-top:var(--s-6)}
+  .about-grid{grid-template-columns:1fr}
+  .project-grid{grid-template-columns:1fr}
+  .project-info{padding:var(--s-8)}
+  .project-diagram{border-left:0;border-top:1px solid var(--line);padding:var(--s-5)}
+  .skill-grid{grid-template-columns:repeat(2,1fr)}
+  .cred-grid,.edu-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .nav{padding:var(--s-3) var(--gutter)}
+  .nav-links,.cmd-trigger span:not(:last-child){display:none}
+  .cmd-trigger{padding:var(--s-2) var(--s-3)}
+  .nav-toggle{display:inline-flex}
+  .hero{padding-top:var(--s-32)}
+  .hero-meta{grid-template-columns:repeat(2,1fr)}
+  .skill-grid{grid-template-columns:1fr}
+  .exp-head{grid-template-columns:1fr}
+  .exp-toggle{justify-self:end}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:480px){
+  .stat-grid{grid-template-columns:1fr}
+  .stat{border-right:0!important;border-bottom:1px solid var(--line);padding:var(--s-4) 0}
+  .stat:last-child{border-bottom:0}
+}
+@media print{
+  body::before,body::after,.nav,.marquee,.cmdk-overlay,.scroll-progress,.footer{display:none!important}
+  .hero{min-height:auto;padding:0}
+  .section{padding:var(--s-8) 0;break-inside:avoid}
+  .project{break-inside:avoid}
+  body{background:white;color:black}
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<nav class="nav" id="nav" aria-label="Primary">
+  <a href="#" class="nav-brand" aria-label="Abdul Sattar Mohammed — home">
+    <span class="nav-brand-mark">A</span>
+    <span class="nav-brand-status mono">available · q1 / q2 2026</span>
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Stack</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="cmd-trigger" id="cmdTrigger" aria-label="Open command palette">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <span>Quick nav</span>
+      <kbd>⌘K</kbd>
+    </button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
+    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-pill mono"><span class="dot"></span> Currently consulting · open to roles</span>
+      <h1 class="hero-h1">Cloud<br/>infrastructure,<br/><span class="accent">automated.</span></h1>
+      <p class="hero-tagline">I'm <strong style="color:var(--text);font-weight:600">Abdul Sattar Mohammed</strong>, a Cloud &amp; DevOps Engineer who ships production-grade AWS systems with <em>Terraform, Kubernetes, and CI/CD</em> — focused on reliability, cost, and operational excellence.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><span class="k">Based</span><span class="v">Houston, TX</span></div>
+        <div class="hero-meta-item"><span class="k">Status</span><span class="v">F-1 STEM OPT</span></div>
+        <div class="hero-meta-item"><span class="k">Certs</span><span class="v">AWS CCP · SAA</span></div>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#projects">See the work <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="assets/docs/abdul-sattar-resume.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download résumé
+        </a>
+      </div>
+      <div class="hero-socials" aria-label="Social links">
+        <a href="https://github.com/abdulsattar" aria-label="GitHub" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12.02c0 5.1 3.29 9.42 7.86 10.95.57.1.78-.25.78-.55 0-.27-.01-1.18-.02-2.14-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.74.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.16 1.18a10.92 10.92 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.66.79.55C20.22 21.43 23.5 17.11 23.5 12.02 23.5 5.65 18.35.5 12 .5z"/></svg></a>
+        <a href="https://www.linkedin.com/in/abdulsattar" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76S7.47 6.73 6.5 6.73zM20 19h-3v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.97V19h-3V8h2.88v1.5h.04c.4-.76 1.39-1.56 2.85-1.56 3.05 0 3.61 2 3.61 4.61V19z"/></svg></a>
+        <a href="mailto:masattar0782@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+      </div>
+    </div>
+
+    <aside class="sys-panel" aria-label="Profile system status">
+      <div class="sys-head">
+        <span class="sys-head-title mono">profile.engineer · status</span>
+        <span class="sys-head-tag mono">v2.6 · prod</span>
+      </div>
+      <div class="sys-body">
+        <div class="sys-row"><span class="k">role</span><span class="v">Cloud / DevOps</span><span class="badge">SR-LEANING</span></div>
+        <div class="sys-row"><span class="k">stack</span><span class="v">aws · terraform · k8s · ansible</span><span></span></div>
+        <div class="sys-row"><span class="k">region</span><span class="v">us-east-1 · us-central</span><span></span></div>
+        <div class="sys-row"><span class="k">uptime</span><span class="v">99.9% sla delivered</span><span class="badge">VERIFIED</span></div>
+        <div class="sys-row"><span class="k">cost-opt</span><span class="v">~40% s3 reduction</span><span></span></div>
+        <div class="sys-row"><span class="k">ci/cd</span><span class="v">~83% release time cut</span><span></span></div>
+        <div class="sys-bar mono"><span>last deploy: today</span><span>● healthy</span><span>p95 &lt; 200ms</span></div>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">AWS</span><span class="marquee-item">Terraform</span><span class="marquee-item">Kubernetes</span><span class="marquee-item">Docker</span><span class="marquee-item">Ansible</span><span class="marquee-item">GitLab CI</span><span class="marquee-item">GitHub Actions</span><span class="marquee-item">Prometheus</span><span class="marquee-item">Grafana</span><span class="marquee-item">Linux · RHEL · Ubuntu</span><span class="marquee-item">Helm</span><span class="marquee-item">EKS</span><span class="marquee-item">Python</span><span class="marquee-item">Bash</span><span class="marquee-item">CloudWatch</span>
+    <span class="marquee-item">AWS</span><span class="marquee-item">Terraform</span><span class="marquee-item">Kubernetes</span><span class="marquee-item">Docker</span><span class="marquee-item">Ansible</span><span class="marquee-item">GitLab CI</span><span class="marquee-item">GitHub Actions</span><span class="marquee-item">Prometheus</span><span class="marquee-item">Grafana</span><span class="marquee-item">Linux · RHEL · Ubuntu</span><span class="marquee-item">Helm</span><span class="marquee-item">EKS</span><span class="marquee-item">Python</span><span class="marquee-item">Bash</span><span class="marquee-item">CloudWatch</span>
+  </div>
+</div>
+
+<section class="stats" aria-labelledby="stats-lede">
+  <div class="stats-inner">
+    <div class="stats-lede" id="stats-lede">Engineering impact, measured</div>
+    <div class="stat-grid">
+      <div class="stat reveal"><div class="stat-num"><span data-num data-target="40" data-prefix="~">~40</span><span class="unit">%</span></div><div class="stat-label">S3 storage cost<br/>reduction</div><div class="stat-source">2 TB · lifecycle + IT</div></div>
+      <div class="stat reveal"><div class="stat-num"><span data-num data-target="60">60</span><span class="unit">%</span></div><div class="stat-label">Docker image<br/>size reduction</div><div class="stat-source">450 MB → 180 MB</div></div>
+      <div class="stat reveal"><div class="stat-num"><span data-num data-target="83" data-prefix="~">~83</span><span class="unit">%</span></div><div class="stat-label">Release time<br/>reduction (CI/CD)</div><div class="stat-source">~1 hr → ~10 min</div></div>
+      <div class="stat reveal"><div class="stat-num"><span data-num data-target="99.9" data-decimal="1">99.9</span><span class="unit">%</span></div><div class="stat-label">Uptime SLA<br/>delivered</div><div class="stat-source">multi-AZ · validated DR</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <header class="section-header reveal">
+      <span class="section-eyebrow mono">about</span>
+      <h2 class="section-title">Engineer first.<br/>Operator always.</h2>
+      <span class="section-line"></span>
+    </header>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm a <strong>Cloud and DevOps engineer</strong> with hands-on experience across <span class="hl">AWS, Azure, Linux administration, and infrastructure-as-code</span>. I hold an MS in Computer Science from Campbellsville University with a 4.0 GPA.</p>
+        <p>At Cognizant, I architected multi-AZ AWS environments supporting 3-tier production applications, built reusable Terraform modules used across dev/stage/prod, and designed GitLab CI pipelines that cut release time from <strong>~1 hour manually to ~10 minutes automated</strong>.</p>
+        <p>My focus areas: <span class="hl">cost optimization</span> (S3 lifecycle policies, right-sizing), <span class="hl">infrastructure automation</span> (Terraform, Ansible), <span class="hl">container orchestration</span> (EKS, Helm), and <span class="hl">observability</span> (Prometheus, Grafana, CloudWatch).</p>
+        <p>Currently open to <strong>Cloud Engineer</strong>, <strong>DevOps Engineer</strong>, and <strong>Cloud Support Engineer</strong> roles where I can apply automation and troubleshooting skills to real production systems.</p>
+      </div>
+      <aside class="about-card reveal" aria-label="Engineer profile snapshot">
+        <div class="about-card-title">engineer.profile</div>
+        <div class="about-card-row"><span class="k">location</span><span class="v">Houston, TX</span></div>
+        <div class="about-card-row"><span class="k">availability</span><span class="v">Open · Remote / Relocate</span></div>
+        <div class="about-card-row"><span class="k">authorization</span><span class="v">F-1 STEM OPT (USA)</span></div>
+        <div class="about-card-row"><span class="k">education</span><span class="v">MS Computer Science</span></div>
+        <div class="about-card-row"><span class="k">gpa</span><span class="v">4.0 / 4.0</span></div>
+        <div class="about-card-row"><span class="k">certs</span><span class="v">AWS CCP · SAA</span></div>
+        <div class="about-card-row"><span class="k">languages</span><span class="v">English · Spanish</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="container">
+    <header class="section-header reveal">
+      <span class="section-eyebrow mono">selected work</span>
+      <h2 class="section-title">Architectures<br/>I've shipped.</h2>
+      <span class="section-line"></span>
+    </header>
+
+    <div class="projects-toolbar reveal" role="toolbar" aria-label="Filter projects">
+      <span class="projects-toolbar-label">filter</span>
+      <button class="filter-chip active" data-filter="all">All <span class="count">6</span></button>
+      <button class="filter-chip" data-filter="aws">AWS</button>
+      <button class="filter-chip" data-filter="terraform">Terraform</button>
+      <button class="filter-chip" data-filter="kubernetes">Kubernetes</button>
+      <button class="filter-chip" data-filter="cicd">CI/CD</button>
+      <button class="filter-chip" data-filter="security">Security</button>
+    </div>
+
+    <article class="project reveal" data-tags="aws security">
+      <div class="project-grid">
+        <div class="project-info">
+          <div>
+            <div class="project-tag mono">project 01 · aws · networking</div>
+            <h3 class="project-title">Multi-AZ 3-Tier Web Application on AWS</h3>
+            <p class="project-desc">Architected and deployed a highly-available production web application across two availability zones with an internet-facing ALB, web/app tiers in private subnets, and a Multi-AZ RDS database. Hardened with IAM least-privilege, security groups, and NACLs.</p>
+            <div class="project-metrics">
+              <div class="metric"><div class="metric-num">99.9%</div><div class="metric-label">Uptime SLA</div></div>
+              <div class="metric"><div class="metric-num">2 min</div><div class="metric-label">MTTD (from 30+ min)</div></div>
+              <div class="metric"><div class="metric-num">−70%</div><div class="metric-label">Excess IAM permissions</div></div>
+              <div class="metric"><div class="metric-num">12+</div><div class="metric-label">AWS services secured</div></div>
+            </div>
+            <div class="project-stack">
+              <span class="chip">VPC</span><span class="chip">EC2</span><span class="chip">ALB</span><span class="chip">RDS Multi-AZ</span><span class="chip">NAT Gateway</span><span class="chip">CloudWatch</span><span class="chip">IAM</span><span class="chip">SNS</span>
+            </div>
+          </div>
+          <div class="project-cta">
+            <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Code (private)</a>
+            <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M10 14L21 3M21 14v7H3V3h7"/></svg> Discuss the architecture</a>
+          </div>
+        </div>
+        <div class="project-diagram">
+          <svg viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Multi-AZ 3-tier VPC architecture">
+            <rect class="svg-region" x="20" y="20" width="480" height="420" rx="6"/>
+            <text class="svg-text-aws" x="32" y="38">AWS · us-east-1</text>
+            <circle cx="260" cy="60" r="16" fill="var(--surface)" stroke="var(--cyan)" stroke-width="1.2"/>
+            <text class="svg-text-tiny" x="260" y="63" text-anchor="middle">www</text>
+            <text class="svg-text-sm" x="260" y="38" text-anchor="middle">Users · Internet</text>
+            <rect class="svg-box-cyan" x="230" y="92" width="60" height="22" rx="3"/>
+            <text class="svg-text-sm" x="260" y="106" text-anchor="middle">IGW</text>
+            <line class="svg-line-flow" x1="260" y1="76" x2="260" y2="92"/>
+            <rect class="svg-vpc" x="40" y="125" width="440" height="295" rx="4"/>
+            <text class="svg-text" x="52" y="143" fill="var(--violet)">VPC · 10.0.0.0/16</text>
+            <rect class="svg-box-aws" x="220" y="155" width="80" height="28" rx="3"/>
+            <text class="svg-text" x="260" y="173" text-anchor="middle">ALB</text>
+            <line class="svg-line-flow" x1="260" y1="114" x2="260" y2="155"/>
+            <rect class="svg-az-pub" x="55" y="195" width="200" height="210" rx="4"/>
+            <text class="svg-text-sm" x="65" y="210" fill="var(--green)">AZ-A · us-east-1a</text>
+            <rect class="svg-az-pub" x="265" y="195" width="200" height="210" rx="4"/>
+            <text class="svg-text-sm" x="275" y="210" fill="var(--green)">AZ-B · us-east-1b</text>
+            <rect class="svg-az-pub" x="65" y="220" width="180" height="42" rx="3" fill="rgba(74,222,128,0.06)"/>
+            <text class="svg-text-tiny" x="73" y="232" fill="var(--green)">PUBLIC · 10.0.1.0/24</text>
+            <rect class="svg-box" x="135" y="237" width="40" height="20" rx="2"/>
+            <text class="svg-text-tiny" x="155" y="250" text-anchor="middle">NAT</text>
+            <rect class="svg-az-pub" x="275" y="220" width="180" height="42" rx="3" fill="rgba(74,222,128,0.06)"/>
+            <text class="svg-text-tiny" x="283" y="232" fill="var(--green)">PUBLIC · 10.0.2.0/24</text>
+            <rect class="svg-box" x="345" y="237" width="40" height="20" rx="2"/>
+            <text class="svg-text-tiny" x="365" y="250" text-anchor="middle">NAT</text>
+            <rect class="svg-az-pri" x="65" y="272" width="180" height="42" rx="3" fill="rgba(77,210,255,0.06)"/>
+            <text class="svg-text-tiny" x="73" y="284" fill="var(--cyan)">PRIVATE-APP · 10.0.11.0/24</text>
+            <rect class="svg-box-aws" x="105" y="290" width="32" height="18" rx="2"/>
+            <text class="svg-text-tiny" x="121" y="302" text-anchor="middle">EC2</text>
+            <rect class="svg-box-aws" x="143" y="290" width="32" height="18" rx="2"/>
+            <text class="svg-text-tiny" x="159" y="302" text-anchor="middle">EC2</text>
+            <rect class="svg-az-pri" x="275" y="272" width="180" height="42" rx="3" fill="rgba(77,210,255,0.06)"/>
+            <text class="svg-text-tiny" x="283" y="284" fill="var(--cyan)">PRIVATE-APP · 10.0.12.0/24</text>
+            <rect class="svg-box-aws" x="315" y="290" width="32" height="18" rx="2"/>
+            <text class="svg-text-tiny" x="331" y="302" text-anchor="middle">EC2</text>
+            <rect class="svg-box-aws" x="353" y="290" width="32" height="18" rx="2"/>
+            <text class="svg-text-tiny" x="369" y="302" text-anchor="middle">EC2</text>
+            <rect class="svg-az-pri" x="65" y="324" width="180" height="42" rx="3" fill="rgba(77,210,255,0.06)"/>
+            <text class="svg-text-tiny" x="73" y="336" fill="var(--cyan)">PRIVATE-DB · 10.0.21.0/24</text>
+            <rect class="svg-box" x="125" y="342" width="60" height="18" rx="2" stroke="var(--violet)"/>
+            <text class="svg-text-tiny" x="155" y="354" text-anchor="middle">RDS Primary</text>
+            <rect class="svg-az-pri" x="275" y="324" width="180" height="42" rx="3" fill="rgba(77,210,255,0.06)"/>
+            <text class="svg-text-tiny" x="283" y="336" fill="var(--cyan)">PRIVATE-DB · 10.0.22.0/24</text>
+            <rect class="svg-box" x="335" y="342" width="60" height="18" rx="2" stroke="var(--violet)"/>
+            <text class="svg-text-tiny" x="365" y="354" text-anchor="middle">RDS Standby</text>
+            <line class="svg-line-flow" x1="240" y1="183" x2="155" y2="237"/>
+            <line class="svg-line-flow" x1="280" y1="183" x2="365" y2="237"/>
+            <line class="svg-line" x1="155" y1="257" x2="121" y2="290"/>
+            <line class="svg-line" x1="365" y1="257" x2="331" y2="290"/>
+            <line class="svg-line-data" x1="121" y1="308" x2="155" y2="342"/>
+            <line class="svg-line-data" x1="331" y1="308" x2="365" y2="342"/>
+            <line class="svg-line-data" x1="155" y1="351" x2="365" y2="351" stroke-dasharray="2 2"/>
+            <rect class="svg-box-aws" x="60" y="380" width="76" height="22" rx="3"/>
+            <text class="svg-text-tiny" x="98" y="394" text-anchor="middle">CloudWatch</text>
+            <rect class="svg-box-aws" x="146" y="380" width="60" height="22" rx="3"/>
+            <text class="svg-text-tiny" x="176" y="394" text-anchor="middle">SNS Alerts</text>
+            <rect class="svg-box-aws" x="216" y="380" width="60" height="22" rx="3"/>
+            <text class="svg-text-tiny" x="246" y="394" text-anchor="middle">IAM Roles</text>
+            <rect class="svg-box-aws" x="286" y="380" width="76" height="22" rx="3"/>
+            <text class="svg-text-tiny" x="324" y="394" text-anchor="middle">Route 53</text>
+            <rect class="svg-box-aws" x="372" y="380" width="76" height="22" rx="3"/>
+            <text class="svg-text-tiny" x="410" y="394" text-anchor="middle">ACM · SSL/TLS</text>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+    <article class="project reveal" data-tags="aws">
+      <div class="project-grid">
+        <div class="project-info">
+          <div>
+            <div class="project-tag mono">project 02 · aws · cost optimization</div>
+            <h3 class="project-title">S3 Lifecycle &amp; Intelligent-Tiering Cost Reduction</h3>
+            <p class="project-desc">Implemented automated S3 storage lifecycle policies and Intelligent-Tiering for a 2 TB dataset, transitioning aging data from Standard → Standard-IA → Glacier → Deep Archive. Cut storage cost by ~40% with zero impact on hot-data retrieval performance.</p>
+            <div class="project-metrics">
+              <div class="metric"><div class="metric-num">~40%</div><div class="metric-label">Storage cost reduction</div></div>
+              <div class="metric"><div class="metric-num">2 TB</div><div class="metric-label">Dataset under policy</div></div>
+              <div class="metric"><div class="metric-num">4-tier</div><div class="metric-label">Lifecycle transitions</div></div>
+              <div class="metric"><div class="metric-num">0 ms</div><div class="metric-label">Hot-tier latency impact</div></div>
+            </div>
+            <div class="project-stack">
+              <span class="chip">S3</span><span class="chip">Intelligent-Tiering</span><span class="chip">Glacier</span><span class="chip">Lifecycle Rules</span><span class="chip">CloudWatch</span><span class="chip">Cost Explorer</span>
+            </div>
+          </div>
+          <div class="project-cta">
+            <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Code (private)</a>
+            <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M10 14L21 3M21 14v7H3V3h7"/></svg> Discuss the architecture</a>
+          </div>
+        </div>
+        <div class="project-diagram">
+          <svg viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="S3 lifecycle 4-tier cost diagram">
+            <text class="svg-text-aws" x="32" y="38">S3 LIFECYCLE · 2TB · −40% cost</text>
+            <rect class="svg-box" x="40" y="60" width="100" height="36" rx="4"/>
+            <text class="svg-text-sm" x="90" y="76" text-anchor="middle" fill="var(--text)">App Servers</text>
+            <text class="svg-text-tiny" x="90" y="89" text-anchor="middle">EC2 · Logs · Backups</text>
+            <path class="svg-line-flow" d="M 145 78 L 175 78" marker-end="url(#arr)"/>
+            <rect class="svg-box-aws" x="180" y="55" width="100" height="46" rx="4"/>
+            <text class="svg-text-sm" x="230" y="72" text-anchor="middle" fill="var(--accent)">S3 BUCKET</text>
+            <text class="svg-text-tiny" x="230" y="86" text-anchor="middle">prod-data-store</text>
+            <text class="svg-text-tiny" x="230" y="96" text-anchor="middle">versioning · enc</text>
+            <rect x="320" y="55" width="160" height="46" rx="4" fill="var(--accent-faint)" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 2"/>
+            <text class="svg-text-sm" x="400" y="72" text-anchor="middle" fill="var(--accent)">LIFECYCLE POLICY</text>
+            <text class="svg-text-tiny" x="400" y="86" text-anchor="middle">automated transitions</text>
+            <text class="svg-text-tiny" x="400" y="96" text-anchor="middle">+ expiration rules</text>
+            <path class="svg-line" d="M 280 78 L 320 78" stroke-dasharray="2 2"/>
+            <text class="svg-text-aws" x="40" y="135">storage class · age · cost</text>
+            <rect x="40" y="148" width="440" height="48" rx="4" fill="rgba(74,222,128,0.08)" stroke="var(--green)" stroke-width="1"/>
+            <text class="svg-text" x="56" y="166" fill="var(--green)">▸ S3 STANDARD</text>
+            <text class="svg-text-sm" x="56" y="182">Hot data · frequent access</text>
+            <text class="svg-text-tiny" x="56" y="192">days 0–30  ·  baseline retrieval ms</text>
+            <text class="svg-text" x="464" y="170" text-anchor="end" fill="var(--green)">$0.023/GB</text>
+            <text class="svg-text-tiny" x="464" y="186" text-anchor="end">100% cost</text>
+            <path class="svg-line-flow" d="M 260 196 L 260 210" marker-end="url(#arr)"/>
+            <text class="svg-text-tiny" x="270" y="208" fill="var(--accent)">after 30d</text>
+            <rect x="40" y="214" width="440" height="48" rx="4" fill="rgba(77,210,255,0.08)" stroke="var(--cyan)" stroke-width="1"/>
+            <text class="svg-text" x="56" y="232" fill="var(--cyan)">▸ S3 STANDARD-IA</text>
+            <text class="svg-text-sm" x="56" y="248">Infrequent access · same low latency</text>
+            <text class="svg-text-tiny" x="56" y="258">days 30–90  ·  retrieval fee per GB</text>
+            <text class="svg-text" x="464" y="236" text-anchor="end" fill="var(--cyan)">$0.0125/GB</text>
+            <text class="svg-text-tiny" x="464" y="252" text-anchor="end">≈45% savings</text>
+            <path class="svg-line-flow" d="M 260 262 L 260 276" marker-end="url(#arr)"/>
+            <text class="svg-text-tiny" x="270" y="274" fill="var(--accent)">after 90d</text>
+            <rect x="40" y="280" width="440" height="48" rx="4" fill="rgba(167,139,250,0.08)" stroke="var(--violet)" stroke-width="1"/>
+            <text class="svg-text" x="56" y="298" fill="var(--violet)">▸ S3 GLACIER FLEXIBLE</text>
+            <text class="svg-text-sm" x="56" y="314">Archival · minutes-to-hours retrieval</text>
+            <text class="svg-text-tiny" x="56" y="324">days 90–365  ·  bulk / standard retrieval</text>
+            <text class="svg-text" x="464" y="302" text-anchor="end" fill="var(--violet)">$0.0036/GB</text>
+            <text class="svg-text-tiny" x="464" y="318" text-anchor="end">≈84% savings</text>
+            <path class="svg-line-flow" d="M 260 328 L 260 342" marker-end="url(#arr)"/>
+            <text class="svg-text-tiny" x="270" y="340" fill="var(--accent)">after 365d</text>
+            <rect x="40" y="346" width="440" height="48" rx="4" fill="rgba(255,94,135,0.08)" stroke="var(--rose)" stroke-width="1"/>
+            <text class="svg-text" x="56" y="364" fill="var(--rose)">▸ S3 GLACIER DEEP ARCHIVE</text>
+            <text class="svg-text-sm" x="56" y="380">Compliance · 12hr retrieval</text>
+            <text class="svg-text-tiny" x="56" y="390">365d+  ·  long-term retention only</text>
+            <text class="svg-text" x="464" y="368" text-anchor="end" fill="var(--rose)">$0.00099/GB</text>
+            <text class="svg-text-tiny" x="464" y="384" text-anchor="end">≈95% savings</text>
+            <rect x="40" y="410" width="440" height="34" rx="4" fill="var(--accent-faint)" stroke="var(--accent)" stroke-width="1"/>
+            <text class="svg-text" x="56" y="430" fill="var(--accent)">RESULT</text>
+            <text class="svg-text-sm" x="464" y="430" text-anchor="end" fill="var(--accent)">total: ~40% cost reduction · 0 latency impact</text>
+            <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)"/></marker></defs>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+    <article class="project reveal" data-tags="aws kubernetes">
+      <div class="project-grid">
+        <div class="project-info">
+          <div>
+            <div class="project-tag mono">project 03 · kubernetes · containers</div>
+            <h3 class="project-title">Microservices on AWS EKS with Helm &amp; HPA</h3>
+            <p class="project-desc">Deployed microservices to AWS EKS using Helm charts with horizontal pod autoscaling, liveness/readiness probes, PodDisruptionBudgets, and RBAC. Containerized a Python/Flask app via multi-stage Dockerfile reducing image size by 60% and build time by 35%.</p>
+            <div class="project-metrics">
+              <div class="metric"><div class="metric-num">−60%</div><div class="metric-label">Docker image size</div></div>
+              <div class="metric"><div class="metric-num">−35%</div><div class="metric-label">Build time</div></div>
+              <div class="metric"><div class="metric-num">0 dt</div><div class="metric-label">Zero-downtime rollouts</div></div>
+              <div class="metric"><div class="metric-num">HPA</div><div class="metric-label">CPU-driven autoscale</div></div>
+            </div>
+            <div class="project-stack">
+              <span class="chip">EKS</span><span class="chip">Helm</span><span class="chip">Docker</span><span class="chip">HPA</span><span class="chip">RBAC</span><span class="chip">PodDisruptionBudget</span><span class="chip">cluster-autoscaler</span>
+            </div>
+          </div>
+          <div class="project-cta">
+            <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Code (private)</a>
+            <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M10 14L21 3M21 14v7H3V3h7"/></svg> Discuss the architecture</a>
+          </div>
+        </div>
+        <div class="project-diagram">
+          <svg viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="EKS architecture with Helm and HPA">
+            <text class="svg-text-aws" x="32" y="34">EKS · helm · hpa · zero-downtime</text>
+            <rect class="svg-box" x="40" y="55" width="80" height="32" rx="3"/>
+            <text class="svg-text-tiny" x="80" y="71" text-anchor="middle">Users</text>
+            <text class="svg-text-tiny" x="80" y="82" text-anchor="middle">Internet</text>
+            <line class="svg-line-flow" x1="120" y1="71" x2="156" y2="71" marker-end="url(#arr2)"/>
+            <rect class="svg-box-aws" x="156" y="55" width="80" height="32" rx="3"/>
+            <text class="svg-text-tiny" x="196" y="71" text-anchor="middle" fill="var(--accent)">ALB Ingress</text>
+            <text class="svg-text-tiny" x="196" y="82" text-anchor="middle">SSL · WAF</text>
+            <line class="svg-line-flow" x1="236" y1="71" x2="270" y2="71" marker-end="url(#arr2)"/>
+            <rect class="svg-az-pri" x="270" y="40" width="220" height="62" rx="4" fill="rgba(77,210,255,0.04)"/>
+            <text class="svg-text-cyan" x="282" y="56">EKS Control Plane</text>
+            <text class="svg-text-tiny" x="282" y="72">api-server · etcd · scheduler</text>
+            <text class="svg-text-tiny" x="282" y="84">controller-mgr · cloud-controller</text>
+            <text class="svg-text-tiny" x="282" y="96">RBAC · IRSA · OIDC</text>
+            <rect x="40" y="120" width="450" height="200" rx="6" fill="rgba(74,222,128,0.04)" stroke="var(--green)" stroke-width="1" stroke-dasharray="4 3"/>
+            <text class="svg-text-sm" x="52" y="138" fill="var(--green)">Worker Node Group · Auto-Scaled</text>
+            <rect x="60" y="150" width="125" height="160" rx="4" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1"/>
+            <text class="svg-text-sm" x="122" y="168" text-anchor="middle">Node 1</text>
+            <rect x="68" y="180" width="50" height="22" rx="2" fill="var(--accent-faint)" stroke="var(--accent)" stroke-width="1"/>
+            <text class="svg-text-tiny" x="93" y="194" text-anchor="middle">flask-api</text>
+            <rect x="124" y="180" width="50" height="22" rx="2" fill="var(--accent-faint)" stroke="var(--accent)" stroke-width="1"/>
+            <text class="svg-text-tiny" x="149" y="194" text-anchor="middle">flask-api</text>
+            <rect x="68" y="210" width="50" height="22" rx="2" fill="rgba(77,210,255,0.08)" stroke="var(--cyan)" stroke-width="1"/>
+            <text class="svg-text-tiny" x="93" y="224" text-anchor="middle">worker</text>
+            <rect x="124" y="210" width="50" height="22" rx="2" fill="rgba(167,139,250,0.08)" stroke="var(--violet)" stroke-width="1"/>
+            <text class="svg-text-tiny" x="149" y="224" text-anchor="middle">redis</text>
+            <text class="svg-text-tiny" x="68" y="252">▸ liveness probe</text>
+            <text class="svg-text-tiny" x="68" y="264">▸ readiness probe</text>
+            <text class="svg-text-tiny" x="68" y="276">▸ resource limits</text>
+            <text class="svg-text-tiny" x="68" y="288">▸ pdb · 1 min available</text>
+            <rect x="195" y="150" width="125" height="160" rx="4" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1"/>
+            <text class="svg-text-sm" x="257" y="168" text-anchor="middle">Node 2</text>
+            <rect x="203" y="180" width="50" height="22" rx="2" fill="var(--accent-faint)" stroke="var(--accent)" stroke-width="1"/>
+            <text class="svg-text-tiny" x="228" y="194" text-anchor="middle">flask-api</text>
+            <rect x="259" y="180" width="50" height="22" rx="2" fill="var(--accent-faint)" stroke="var(--accent)" stroke-width="1"/>
+            <text class="svg-text-tiny" x="284" y="194" text-anchor="middle">flask-api</text>
+            <rect x="203" y="210" width="50" height="22" rx="2" fill="rgba(77,210,255,0.08)" stroke="var(--cyan)" stroke-width="1"/>
+            <text class="svg-text-tiny" x="228" y="224" text-anchor="middle">worker</text>
+            <rect x="259" y="210" width="50" height="22" rx="2" fill="rgba(167,139,250,0.08)" stroke="var(--violet)" stroke-width="1"/>
+            <text class="svg-text-tiny" x="284" y="224" text-anchor="middle">redis</text>
+            <rect x="330" y="150" width="150" height="160" rx="4" fill="var(--accent-faint)" stroke="var(--accent)" stroke-width="1"/>
+            <text class="svg-text-sm" x="405" y="168" text-anchor="middle" fill="var(--accent)">HPA · autoscale</text>
+            <text class="svg-text-tiny" x="345" y="190">target: cpu &gt; 70%</text>
+            <text class="svg-text-tiny" x="345" y="204">min replicas: 2</text>
+            <text class="svg-text-tiny" x="345" y="218">max replicas: 10</text>
+            <text class="svg-text-tiny" x="345" y="232">scale-up: +2 / 60s</text>
+            <text class="svg-text-tiny" x="345" y="246">scale-down: -1 / 300s</text>
+            <line class="svg-line-data" x1="405" y1="260" x2="405" y2="285" marker-end="url(#arr2)"/>
+            <text class="svg-text-tiny" x="345" y="298" fill="var(--cyan)">+ cluster-autoscaler</text>
+            <text class="svg-text-aws" x="40" y="345">deployment workflow · helm</text>
+            <rect class="svg-box" x="40" y="356" width="78" height="34" rx="3"/>
+            <text class="svg-text-tiny" x="79" y="372" text-anchor="middle">git push</text>
+            <text class="svg-text-tiny" x="79" y="384" text-anchor="middle">helm chart</text>
+            <line class="svg-line-flow" x1="118" y1="373" x2="148" y2="373" marker-end="url(#arr2)"/>
+            <rect class="svg-box-aws" x="148" y="356" width="86" height="34" rx="3"/>
+            <text class="svg-text-tiny" x="191" y="372" text-anchor="middle" fill="var(--accent)">CI · build</text>
+            <text class="svg-text-tiny" x="191" y="384" text-anchor="middle">trivy scan · ECR</text>
+            <line class="svg-line-flow" x1="234" y1="373" x2="264" y2="373" marker-end="url(#arr2)"/>
+            <rect class="svg-box-aws" x="264" y="356" width="86" height="34" rx="3"/>
+            <text class="svg-text-tiny" x="307" y="372" text-anchor="middle" fill="var(--accent)">helm upgrade</text>
+            <text class="svg-text-tiny" x="307" y="384" text-anchor="middle">--atomic --wait</text>
+            <line class="svg-line-flow" x1="350" y1="373" x2="380" y2="373" marker-end="url(#arr2)"/>
+            <rect class="svg-box" x="380" y="356" width="100" height="34" rx="3" stroke="var(--green)"/>
+            <text class="svg-text-tiny" x="430" y="372" text-anchor="middle" fill="var(--green)">rolling update</text>
+            <text class="svg-text-tiny" x="430" y="384" text-anchor="middle">zero downtime</text>
+            <text class="svg-text-tiny" x="40" y="420">strategy: RollingUpdate · maxSurge=25% · maxUnavailable=0  ·  rollback: helm rollback &lt;rev&gt;</text>
+            <defs><marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)"/></marker></defs>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+    <article class="project reveal" data-tags="cicd security">
+      <div class="project-grid">
+        <div class="project-info">
+          <div>
+            <div class="project-tag mono">project 04 · ci/cd · security</div>
+            <h3 class="project-title">GitLab CI Pipeline with Trivy &amp; SonarQube Gates</h3>
+            <p class="project-desc">Designed a GitLab CI pipeline with build, test, Trivy vulnerability scanning, SonarQube quality gates, and automated deploy stages. Cut release time from ~1 hour manual to ~10 minutes automated. Blocked 12+ vulnerable PRs from merging.</p>
+            <div class="project-metrics">
+              <div class="metric"><div class="metric-num">~83%</div><div class="metric-label">Release time cut</div></div>
+              <div class="metric"><div class="metric-num">12+</div><div class="metric-label">Vulnerable PRs blocked</div></div>
+              <div class="metric"><div class="metric-num">5 stages</div><div class="metric-label">Build · test · scan · deploy</div></div>
+              <div class="metric"><div class="metric-num">3 envs</div><div class="metric-label">dev / stage / prod</div></div>
+            </div>
+            <div class="project-stack">
+              <span class="chip">GitLab CI</span><span class="chip">GitHub Actions</span><span class="chip">Trivy</span><span class="chip">SonarQube</span><span class="chip">Docker</span><span class="chip">YAML</span>
+            </div>
+          </div>
+          <div class="project-cta">
+            <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Code (private)</a>
+            <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M10 14L21 3M21 14v7H3V3h7"/></svg> Discuss the architecture</a>
+          </div>
+        </div>
+        <div class="project-diagram">
+          <svg viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="GitLab CI pipeline with security gates">
+            <text class="svg-text-aws" x="32" y="34">CI/CD · gated · ~10min end-to-end</text>
+            <rect class="svg-box" x="40" y="56" width="86" height="32" rx="3"/>
+            <text class="svg-text-tiny" x="83" y="71" text-anchor="middle">developer</text>
+            <text class="svg-text-tiny" x="83" y="83" text-anchor="middle">git push</text>
+            <line class="svg-line-flow" x1="126" y1="72" x2="155" y2="72" marker-end="url(#arr3)"/>
+            <rect class="svg-box-aws" x="155" y="56" width="86" height="32" rx="3"/>
+            <text class="svg-text-tiny" x="198" y="71" text-anchor="middle" fill="var(--accent)">GitLab MR</text>
+            <text class="svg-text-tiny" x="198" y="83" text-anchor="middle">trigger pipeline</text>
+            <line class="svg-line-flow" x1="241" y1="72" x2="270" y2="72" marker-end="url(#arr3)"/>
+            <rect class="svg-box-aws" x="270" y="56" width="86" height="32" rx="3"/>
+            <text class="svg-text-tiny" x="313" y="71" text-anchor="middle" fill="var(--accent)">.gitlab-ci.yml</text>
+            <text class="svg-text-tiny" x="313" y="83" text-anchor="middle">5 stages</text>
+            <line class="svg-line-flow" x1="313" y1="92" x2="313" y2="112" marker-end="url(#arr3)"/>
+            <rect x="40" y="115" width="450" height="56" rx="4" fill="rgba(77,210,255,0.06)" stroke="var(--cyan)" stroke-width="1" stroke-dasharray="3 2"/>
+            <text class="svg-text-cyan" x="52" y="132">stage 1 · build</text>
+            <rect class="svg-box" x="60" y="140" width="100" height="22" rx="2" stroke="var(--cyan)"/>
+            <text class="svg-text-tiny" x="110" y="154" text-anchor="middle">docker build</text>
+            <rect class="svg-box" x="170" y="140" width="100" height="22" rx="2" stroke="var(--cyan)"/>
+            <text class="svg-text-tiny" x="220" y="154" text-anchor="middle">npm/pip install</text>
+            <rect class="svg-box" x="280" y="140" width="100" height="22" rx="2" stroke="var(--cyan)"/>
+            <text class="svg-text-tiny" x="330" y="154" text-anchor="middle">cache deps</text>
+            <rect class="svg-box" x="390" y="140" width="80" height="22" rx="2" stroke="var(--cyan)"/>
+            <text class="svg-text-tiny" x="430" y="154" text-anchor="middle">push ECR</text>
+            <line class="svg-line-flow" x1="260" y1="171" x2="260" y2="183" marker-end="url(#arr3)"/>
+            <rect x="40" y="186" width="450" height="56" rx="4" fill="rgba(74,222,128,0.06)" stroke="var(--green)" stroke-width="1" stroke-dasharray="3 2"/>
+            <text class="svg-text" x="52" y="203" fill="var(--green)">stage 2 · test</text>
+            <rect class="svg-box" x="60" y="211" width="120" height="22" rx="2" stroke="var(--green)"/>
+            <text class="svg-text-tiny" x="120" y="225" text-anchor="middle">unit tests · pytest</text>
+            <rect class="svg-box" x="190" y="211" width="120" height="22" rx="2" stroke="var(--green)"/>
+            <text class="svg-text-tiny" x="250" y="225" text-anchor="middle">integration · 90% cov</text>
+            <rect class="svg-box" x="320" y="211" width="150" height="22" rx="2" stroke="var(--green)"/>
+            <text class="svg-text-tiny" x="395" y="225" text-anchor="middle">junit reports → MR</text>
+            <line class="svg-line-flow" x1="260" y1="242" x2="260" y2="254" marker-end="url(#arr3)"/>
+            <rect x="40" y="257" width="450" height="56" rx="4" fill="rgba(255,153,0,0.06)" stroke="var(--accent)" stroke-width="1.4"/>
+            <text class="svg-text-aws" x="52" y="274">stage 3 · security gates · ⚠ blocking</text>
+            <rect class="svg-box-aws" x="60" y="282" width="110" height="22" rx="2"/>
+            <text class="svg-text-tiny" x="115" y="296" text-anchor="middle" fill="var(--accent)">trivy scan · CVEs</text>
+            <rect class="svg-box-aws" x="180" y="282" width="110" height="22" rx="2"/>
+            <text class="svg-text-tiny" x="235" y="296" text-anchor="middle" fill="var(--accent)">sonarqube · quality</text>
+            <rect class="svg-box-aws" x="300" y="282" width="110" height="22" rx="2"/>
+            <text class="svg-text-tiny" x="355" y="296" text-anchor="middle" fill="var(--accent)">deps · npm audit</text>
+            <rect class="svg-box-aws" x="420" y="282" width="50" height="22" rx="2"/>
+            <text class="svg-text-tiny" x="445" y="296" text-anchor="middle" fill="var(--accent)">SAST</text>
+            <line class="svg-line-flow" x1="260" y1="313" x2="260" y2="325" marker-end="url(#arr3)"/>
+            <rect x="40" y="328" width="450" height="56" rx="4" fill="rgba(167,139,250,0.06)" stroke="var(--violet)" stroke-width="1" stroke-dasharray="3 2"/>
+            <text class="svg-text" x="52" y="345" fill="var(--violet)">stage 4 · deploy stage / prod</text>
+            <rect class="svg-box" x="60" y="353" width="100" height="22" rx="2" stroke="var(--violet)"/>
+            <text class="svg-text-tiny" x="110" y="367" text-anchor="middle">deploy stage</text>
+            <rect class="svg-box" x="170" y="353" width="120" height="22" rx="2" stroke="var(--violet)"/>
+            <text class="svg-text-tiny" x="230" y="367" text-anchor="middle">smoke tests · curl</text>
+            <rect class="svg-box" x="300" y="353" width="100" height="22" rx="2" stroke="var(--violet)"/>
+            <text class="svg-text-tiny" x="350" y="367" text-anchor="middle">manual approve</text>
+            <rect class="svg-box" x="410" y="353" width="60" height="22" rx="2" stroke="var(--violet)"/>
+            <text class="svg-text-tiny" x="440" y="367" text-anchor="middle">→ prod</text>
+            <rect x="40" y="395" width="450" height="50" rx="4" fill="var(--accent-faint)" stroke="var(--accent)" stroke-width="1"/>
+            <text class="svg-text" x="52" y="412" fill="var(--accent)">RESULT</text>
+            <text class="svg-text-tiny" x="52" y="426">manual release: ~1 hour  →  automated: ~10 min  ·  −83% time</text>
+            <text class="svg-text-tiny" x="52" y="438">security gates blocked 12+ vulnerable PRs from merging to main</text>
+            <defs><marker id="arr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)"/></marker></defs>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+    <article class="project reveal" data-tags="terraform aws">
+      <div class="project-grid">
+        <div class="project-info">
+          <div>
+            <div class="project-tag mono">project 05 · terraform · iac</div>
+            <h3 class="project-title">Reusable Terraform Modules with Remote State</h3>
+            <p class="project-desc">Authored reusable Terraform modules (network, compute, RDS) consumed across dev/stage/prod environments — reducing duplicate infra code by 80%. Configured S3 remote state with DynamoDB locking. Migrated 50+ manually provisioned resources via <code style="font-family:var(--f-mono)">terraform import</code>.</p>
+            <div class="project-metrics">
+              <div class="metric"><div class="metric-num">−80%</div><div class="metric-label">Duplicate infra code</div></div>
+              <div class="metric"><div class="metric-num">50+</div><div class="metric-label">Resources imported to IaC</div></div>
+              <div class="metric"><div class="metric-num">3 envs</div><div class="metric-label">dev · stage · prod</div></div>
+              <div class="metric"><div class="metric-num">100%</div><div class="metric-label">IaC coverage</div></div>
+            </div>
+            <div class="project-stack">
+              <span class="chip">Terraform</span><span class="chip">Modules</span><span class="chip">S3 Backend</span><span class="chip">DynamoDB Lock</span><span class="chip">terraform import</span>
+            </div>
+          </div>
+          <div class="project-cta">
+            <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Code (private)</a>
+            <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M10 14L21 3M21 14v7H3V3h7"/></svg> Discuss the architecture</a>
+          </div>
+        </div>
+        <div class="project-diagram">
+          <svg viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Terraform modules and remote state architecture">
+            <text class="svg-text-aws" x="32" y="34">terraform · modules · remote state</text>
+            <text class="svg-text-aws" x="32" y="68">/modules · DRY building blocks</text>
+            <rect class="svg-box-aws" x="32" y="80" width="142" height="42" rx="4"/>
+            <text class="svg-text-sm" x="103" y="98" text-anchor="middle" fill="var(--accent)">network/</text>
+            <text class="svg-text-tiny" x="103" y="112" text-anchor="middle">vpc · subnets · rt</text>
+            <rect class="svg-box-aws" x="184" y="80" width="142" height="42" rx="4"/>
+            <text class="svg-text-sm" x="255" y="98" text-anchor="middle" fill="var(--accent)">compute/</text>
+            <text class="svg-text-tiny" x="255" y="112" text-anchor="middle">ec2 · asg · launch-tpl</text>
+            <rect class="svg-box-aws" x="336" y="80" width="142" height="42" rx="4"/>
+            <text class="svg-text-sm" x="407" y="98" text-anchor="middle" fill="var(--accent)">rds/</text>
+            <text class="svg-text-tiny" x="407" y="112" text-anchor="middle">multi-az · sgs · params</text>
+            <text class="svg-text-aws" x="32" y="156">/envs · per-environment composition</text>
+            <rect x="32" y="168" width="142" height="58" rx="4" fill="rgba(74,222,128,0.04)" stroke="var(--green)" stroke-width="1" stroke-dasharray="3 2"/>
+            <text class="svg-text-sm" x="103" y="187" text-anchor="middle" fill="var(--green)">envs/dev</text>
+            <text class="svg-text-tiny" x="103" y="201" text-anchor="middle">main.tf · t3.micro</text>
+            <text class="svg-text-tiny" x="103" y="213" text-anchor="middle">single-az · 1d retention</text>
+            <rect x="184" y="168" width="142" height="58" rx="4" fill="rgba(77,210,255,0.04)" stroke="var(--cyan)" stroke-width="1" stroke-dasharray="3 2"/>
+            <text class="svg-text-sm" x="255" y="187" text-anchor="middle" fill="var(--cyan)">envs/stage</text>
+            <text class="svg-text-tiny" x="255" y="201" text-anchor="middle">main.tf · t3.medium</text>
+            <text class="svg-text-tiny" x="255" y="213" text-anchor="middle">multi-az · 7d retention</text>
+            <rect x="336" y="168" width="142" height="58" rx="4" fill="rgba(255,153,0,0.04)" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 2"/>
+            <text class="svg-text-sm" x="407" y="187" text-anchor="middle" fill="var(--accent)">envs/prod</text>
+            <text class="svg-text-tiny" x="407" y="201" text-anchor="middle">main.tf · m5.large+</text>
+            <text class="svg-text-tiny" x="407" y="213" text-anchor="middle">multi-az · 35d retention</text>
+            <line class="svg-line" x1="103" y1="126" x2="103" y2="168" stroke-dasharray="2 2"/>
+            <line class="svg-line" x1="255" y1="126" x2="255" y2="168" stroke-dasharray="2 2"/>
+            <line class="svg-line" x1="407" y1="126" x2="407" y2="168" stroke-dasharray="2 2"/>
+            <text class="svg-text-aws" x="32" y="252">terraform plan · apply</text>
+            <rect class="svg-box" x="32" y="264" width="80" height="34" rx="4"/>
+            <text class="svg-text-tiny" x="72" y="280" text-anchor="middle">developer</text>
+            <text class="svg-text-tiny" x="72" y="292" text-anchor="middle">tf apply</text>
+            <line class="svg-line-flow" x1="112" y1="281" x2="138" y2="281" marker-end="url(#arr4)"/>
+            <rect class="svg-box-aws" x="138" y="264" width="92" height="34" rx="4"/>
+            <text class="svg-text-tiny" x="184" y="280" text-anchor="middle" fill="var(--accent)">acquire lock</text>
+            <text class="svg-text-tiny" x="184" y="292" text-anchor="middle">DynamoDB</text>
+            <line class="svg-line-flow" x1="230" y1="281" x2="256" y2="281" marker-end="url(#arr4)"/>
+            <rect class="svg-box-aws" x="256" y="264" width="92" height="34" rx="4"/>
+            <text class="svg-text-tiny" x="302" y="280" text-anchor="middle" fill="var(--accent)">read state</text>
+            <text class="svg-text-tiny" x="302" y="292" text-anchor="middle">S3 · encrypted</text>
+            <line class="svg-line-flow" x1="348" y1="281" x2="374" y2="281" marker-end="url(#arr4)"/>
+            <rect class="svg-box-aws" x="374" y="264" width="106" height="34" rx="4"/>
+            <text class="svg-text-tiny" x="427" y="280" text-anchor="middle" fill="var(--accent)">apply diff</text>
+            <text class="svg-text-tiny" x="427" y="292" text-anchor="middle">→ AWS API</text>
+            <text class="svg-text-aws" x="32" y="328">remote state · safe collaboration</text>
+            <rect x="32" y="340" width="220" height="100" rx="4" fill="var(--accent-faint)" stroke="var(--accent)" stroke-width="1"/>
+            <text class="svg-text-sm" x="142" y="358" text-anchor="middle" fill="var(--accent)">S3 · terraform-state-bucket</text>
+            <text class="svg-text-tiny" x="46" y="375">▸ versioning enabled</text>
+            <text class="svg-text-tiny" x="46" y="388">▸ AES-256 server-side encryption</text>
+            <text class="svg-text-tiny" x="46" y="401">▸ blocked public access</text>
+            <text class="svg-text-tiny" x="46" y="414">▸ MFA-protected delete</text>
+            <text class="svg-text-tiny" x="46" y="427">▸ separate keys per env / per workspace</text>
+            <rect x="262" y="340" width="216" height="100" rx="4" fill="rgba(77,210,255,0.06)" stroke="var(--cyan)" stroke-width="1"/>
+            <text class="svg-text-sm" x="370" y="358" text-anchor="middle" fill="var(--cyan)">DynamoDB · state-lock-table</text>
+            <text class="svg-text-tiny" x="276" y="375">▸ partition key: LockID</text>
+            <text class="svg-text-tiny" x="276" y="388">▸ on-demand capacity</text>
+            <text class="svg-text-tiny" x="276" y="401">▸ prevents concurrent writes</text>
+            <text class="svg-text-tiny" x="276" y="414">▸ blocks parallel `tf apply`</text>
+            <text class="svg-text-tiny" x="276" y="427">▸ stale-lock auto-recovery</text>
+            <defs><marker id="arr4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)"/></marker></defs>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+    <article class="project reveal" data-tags="aws security">
+      <div class="project-grid">
+        <div class="project-info">
+          <div>
+            <div class="project-tag mono">project 06 · dr · resilience</div>
+            <h3 class="project-title">Backup &amp; Disaster Recovery for 99.9% Uptime SLA</h3>
+            <p class="project-desc">Designed and validated a backup &amp; DR strategy combining AWS Backup, EBS snapshots, RDS automated snapshots, and rsync offsite replication. Scheduled recovery testing ensures RTO/RPO compliance. Hardened with SELinux, SSH key-only auth, and auditd logging.</p>
+            <div class="project-metrics">
+              <div class="metric"><div class="metric-num">99.9%</div><div class="metric-label">Uptime SLA target</div></div>
+              <div class="metric"><div class="metric-num">RPO 1h</div><div class="metric-label">Recovery Point Objective</div></div>
+              <div class="metric"><div class="metric-num">RTO 4h</div><div class="metric-label">Recovery Time Objective</div></div>
+              <div class="metric"><div class="metric-num">Cross-AZ</div><div class="metric-label">Snapshot replication</div></div>
+            </div>
+            <div class="project-stack">
+              <span class="chip">AWS Backup</span><span class="chip">EBS Snapshots</span><span class="chip">RDS Snapshots</span><span class="chip">rsync</span><span class="chip">SELinux</span><span class="chip">auditd</span><span class="chip">fail2ban</span>
+            </div>
+          </div>
+          <div class="project-cta">
+            <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Code (private)</a>
+            <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M10 14L21 3M21 14v7H3V3h7"/></svg> Discuss the architecture</a>
+          </div>
+        </div>
+        <div class="project-diagram">
+          <svg viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Backup and disaster recovery architecture">
+            <text class="svg-text-aws" x="32" y="34">BACKUP &amp; DR · cross-region resilient</text>
+            <rect x="20" y="50" width="240" height="380" rx="6" fill="rgba(77,210,255,0.04)" stroke="var(--cyan)" stroke-width="1.2" stroke-dasharray="4 3"/>
+            <text class="svg-text-cyan" x="32" y="68">PRIMARY · us-east-1</text>
+            <text class="svg-text-aws" x="32" y="88">production resources</text>
+            <rect class="svg-box-aws" x="32" y="98" width="100" height="34" rx="3"/>
+            <text class="svg-text-tiny" x="82" y="113" text-anchor="middle">EC2 fleet</text>
+            <text class="svg-text-tiny" x="82" y="125" text-anchor="middle">app · web tier</text>
+            <rect class="svg-box-aws" x="138" y="98" width="100" height="34" rx="3"/>
+            <text class="svg-text-tiny" x="188" y="113" text-anchor="middle">RDS Multi-AZ</text>
+            <text class="svg-text-tiny" x="188" y="125" text-anchor="middle">primary · standby</text>
+            <text class="svg-text-aws" x="32" y="156">backup orchestration</text>
+            <rect x="32" y="166" width="206" height="80" rx="4" fill="var(--accent-faint)" stroke="var(--accent)" stroke-width="1"/>
+            <text class="svg-text-sm" x="135" y="184" text-anchor="middle" fill="var(--accent)">AWS Backup · vault</text>
+            <text class="svg-text-tiny" x="46" y="200">▸ daily EBS snapshots · 7d retain</text>
+            <text class="svg-text-tiny" x="46" y="212">▸ RDS automated snapshots · 35d</text>
+            <text class="svg-text-tiny" x="46" y="224">▸ tag-based selection</text>
+            <text class="svg-text-tiny" x="46" y="236">▸ KMS encryption</text>
+            <text class="svg-text-aws" x="32" y="270">linux hardening (host-level)</text>
+            <rect x="32" y="280" width="206" height="100" rx="4" fill="rgba(74,222,128,0.04)" stroke="var(--green)" stroke-width="0.8"/>
+            <text class="svg-text-tiny" x="42" y="296" fill="var(--green)">▸ SELinux enforcing</text>
+            <text class="svg-text-tiny" x="42" y="308" fill="var(--green)">▸ SSH · key-only · no root</text>
+            <text class="svg-text-tiny" x="42" y="320" fill="var(--green)">▸ firewalld + iptables rules</text>
+            <text class="svg-text-tiny" x="42" y="332" fill="var(--green)">▸ fail2ban · brute-force protect</text>
+            <text class="svg-text-tiny" x="42" y="344" fill="var(--green)">▸ auditd · log immutable events</text>
+            <text class="svg-text-tiny" x="42" y="356" fill="var(--green)">▸ CIS Benchmark Level 1</text>
+            <text class="svg-text-tiny" x="42" y="368" fill="var(--green)">▸ unattended-upgrades · patching</text>
+            <text class="svg-text-aws" x="32" y="402">offsite replication</text>
+            <rect class="svg-box" x="32" y="410" width="206" height="20" rx="2" stroke="var(--accent)"/>
+            <text class="svg-text-tiny" x="135" y="424" text-anchor="middle" fill="var(--accent)">rsync · nightly · S3 cross-region</text>
+            <line class="svg-line-flow" x1="262" y1="158" x2="288" y2="158" marker-end="url(#arr5)"/>
+            <text class="svg-text-tiny" x="262" y="148" fill="var(--accent)">replicate</text>
+            <rect x="282" y="50" width="208" height="380" rx="6" fill="rgba(255,94,135,0.04)" stroke="var(--rose)" stroke-width="1.2" stroke-dasharray="4 3"/>
+            <text class="svg-text" x="294" y="68" fill="var(--rose)">SECONDARY · us-west-2</text>
+            <text class="svg-text-aws" x="292" y="88">cross-region copies</text>
+            <rect class="svg-box" x="292" y="98" width="92" height="34" rx="3" stroke="var(--rose)"/>
+            <text class="svg-text-tiny" x="338" y="113" text-anchor="middle">EBS snapshots</text>
+            <text class="svg-text-tiny" x="338" y="125" text-anchor="middle">replicated</text>
+            <rect class="svg-box" x="394" y="98" width="92" height="34" rx="3" stroke="var(--rose)"/>
+            <text class="svg-text-tiny" x="440" y="113" text-anchor="middle">RDS snapshots</text>
+            <text class="svg-text-tiny" x="440" y="125" text-anchor="middle">copied · KMS</text>
+            <text class="svg-text-aws" x="292" y="156">standby resources</text>
+            <rect class="svg-box" x="292" y="166" width="92" height="32" rx="3" stroke="var(--rose)"/>
+            <text class="svg-text-tiny" x="338" y="181" text-anchor="middle">ASG · 0 desired</text>
+            <text class="svg-text-tiny" x="338" y="192" text-anchor="middle">warm pool</text>
+            <rect class="svg-box" x="394" y="166" width="92" height="32" rx="3" stroke="var(--rose)"/>
+            <text class="svg-text-tiny" x="440" y="181" text-anchor="middle">ALB target group</text>
+            <text class="svg-text-tiny" x="440" y="192" text-anchor="middle">empty · ready</text>
+            <rect class="svg-box" x="292" y="200" width="92" height="32" rx="3" stroke="var(--rose)"/>
+            <text class="svg-text-tiny" x="338" y="215" text-anchor="middle">EC2 AMIs</text>
+            <text class="svg-text-tiny" x="338" y="226" text-anchor="middle">launch-ready</text>
+            <rect class="svg-box" x="394" y="200" width="92" height="32" rx="3" stroke="var(--rose)"/>
+            <text class="svg-text-tiny" x="440" y="215" text-anchor="middle">RDS replica</text>
+            <text class="svg-text-tiny" x="440" y="226" text-anchor="middle">read-only</text>
+            <text class="svg-text-aws" x="292" y="256">failover · route53 health checks</text>
+            <rect x="292" y="266" width="196" height="56" rx="4" fill="rgba(255,94,135,0.06)" stroke="var(--rose)" stroke-width="1"/>
+            <text class="svg-text-tiny" x="302" y="284" fill="var(--rose)">▸ Route53 health check fail</text>
+            <text class="svg-text-tiny" x="302" y="296" fill="var(--rose)">▸ promote standby RDS</text>
+            <text class="svg-text-tiny" x="302" y="308" fill="var(--rose)">▸ scale ASG · attach ALB</text>
+            <text class="svg-text-tiny" x="302" y="320" fill="var(--rose)">▸ DNS swap · within RTO</text>
+            <text class="svg-text-aws" x="292" y="346">recovery validation</text>
+            <rect x="292" y="356" width="196" height="64" rx="4" fill="rgba(74,222,128,0.04)" stroke="var(--green)" stroke-width="0.8"/>
+            <text class="svg-text-tiny" x="302" y="372" fill="var(--green)">monthly · automated drill</text>
+            <text class="svg-text-tiny" x="302" y="386" fill="var(--green)">RPO target: ≤ 1 hour</text>
+            <text class="svg-text-tiny" x="302" y="398" fill="var(--green)">RTO target: ≤ 4 hours</text>
+            <text class="svg-text-tiny" x="302" y="412" fill="var(--green)">runbook in confluence</text>
+            <defs><marker id="arr5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)"/></marker></defs>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="experience" class="section">
+  <div class="container">
+    <header class="section-header reveal">
+      <span class="section-eyebrow mono">experience</span>
+      <h2 class="section-title">Where I've operated.</h2>
+      <span class="section-line"></span>
+    </header>
+
+    <div class="exp-timeline">
+      <article class="exp open reveal">
+        <header class="exp-head" tabindex="0" role="button" aria-expanded="true">
+          <div>
+            <div class="exp-meta mono"><span>Sep 2021 — Jul 2022</span><span class="duration">· ~11 months</span></div>
+            <div class="exp-title">Cloud DevOps Engineer</div>
+            <div class="exp-company mono">Cognizant Technology Solutions · Hyderabad, India</div>
+          </div>
+          <div class="exp-toggle" aria-hidden="true">+</div>
+        </header>
+        <div class="exp-body">
+          <div class="exp-body-inner">
+            <ul class="exp-list">
+              <li><strong>Architected and deployed a multi-AZ VPC</strong> with public/private subnets, NAT gateway, and security groups on AWS supporting a 3-tier web app with high availability.</li>
+              <li><strong>Configured IAM roles &amp; policies</strong> following least-privilege for 12+ AWS services; reduced excess permissions by 70% via policy refactoring.</li>
+              <li><strong>Implemented S3 lifecycle &amp; Intelligent-Tiering</strong>, reducing storage costs by ~40% on a 2 TB dataset.</li>
+              <li><strong>Built CloudWatch alarms, dashboards &amp; SNS notifications</strong> for EC2/RDS/ALB health metrics — reducing MTTD from 30+ min to under 2 min.</li>
+              <li><strong>Authored reusable Terraform modules</strong> (network, compute, RDS) used across 3 environments — reducing duplicate code by 80%.</li>
+              <li>Configured remote state backend on S3 with <strong>DynamoDB state locking</strong> for safe multi-developer collaboration.</li>
+              <li>Migrated 50+ manually provisioned resources to Terraform via <code>terraform import</code> — achieved full IaC coverage.</li>
+              <li><strong>Containerized a Python/Flask app</strong> with multi-stage Dockerfile, reducing image size from 450 MB → 180 MB (60%) and build time by 35%.</li>
+              <li>Authored <code>docker-compose.yml</code> orchestrating Flask, PostgreSQL, Redis, and Nginx with custom networks and named volumes.</li>
+              <li><strong>Deployed microservices to AWS EKS</strong> using Helm charts with HPA responding to CPU thresholds.</li>
+              <li>Configured liveness/readiness probes, resource requests/limits, and PodDisruptionBudget for zero-downtime rolling updates.</li>
+              <li>Implemented RBAC + namespaces for workload isolation and integrated cluster-autoscaler for node-level scaling.</li>
+              <li><strong>Designed a GitLab CI pipeline</strong> with build / test / Trivy scan / deploy stages — reduced release time from ~1 hour manual to ~10 min automated.</li>
+              <li>Integrated SonarQube and dependency-vulnerability scanning into GitHub Actions; blocked 12+ vulnerable PRs from merging.</li>
+              <li>Wrote Bash scripts for log rotation, backup, and health-checks across 20+ Linux servers — eliminated 5 hrs/week of manual work.</li>
+              <li>Diagnosed a recurring memory leak via <code>/proc</code>, <code>top</code>, <code>journalctl</code> — root-caused to a stale daemon and patched via systemd unit.</li>
+              <li><strong>Hardened Ubuntu/RHEL servers</strong> per CIS Benchmark Level 1 using Ansible (UFW/firewalld, fail2ban, SSH key auth, audit logging).</li>
+              <li>Authored idempotent Ansible playbooks to bootstrap a 10-server fleet (Nginx, Docker, monitoring agents) in under 8 minutes vs ~3 hours manual.</li>
+              <li><strong>Built Prometheus + Grafana monitoring</strong> with custom dashboards for application latency, error rate, and infra metrics.</li>
+              <li>Configured Alertmanager → PagerDuty escalation; tuned thresholds to reduce false positives by 80%.</li>
+              <li>Documented runbooks for 8 recurring incidents in Confluence — cut average resolution time for repeats by 50%.</li>
+              <li>Mentored 2 junior teammates on Git workflows, Docker fundamentals, and AWS basics through paired-programming sessions.</li>
+              <li>Provided 24/7 on-call rotation including off-hours patching windows and incident response.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="exp reveal">
+        <header class="exp-head" tabindex="0" role="button" aria-expanded="false">
+          <div>
+            <div class="exp-meta mono"><span>Aug 2022 — Present</span><span class="duration">· ongoing</span></div>
+            <div class="exp-title">Linux &amp; AWS Infrastructure Engineer</div>
+            <div class="exp-company mono">Independent / Academic Projects · Houston, TX</div>
+          </div>
+          <div class="exp-toggle" aria-hidden="true">+</div>
+        </header>
+        <div class="exp-body">
+          <div class="exp-body-inner">
+            <ul class="exp-list">
+              <li><strong>Designed multi-distribution Linux environments</strong> (Ubuntu, RHEL, CentOS) on AWS EC2 using standardized AMIs and automated provisioning.</li>
+              <li>Built automated server bootstrap workflows using Ansible roles for package installation, Docker setup, monitoring agents, and patch management.</li>
+              <li><strong>Implemented enterprise-style storage architecture</strong> using LVM, NFS mounts, and tiered EBS volumes for applications, logs, and backups.</li>
+              <li><strong>Designed backup &amp; DR strategy</strong> using AWS Backup, EBS snapshots, and rsync offsite replication — validated through scheduled recovery testing.</li>
+              <li>Implemented host security: SELinux enforcement, SSH key-only auth, firewalld rules, fail2ban, auditd logging.</li>
+              <li>Developed Python and Bash automation for user lifecycle management, certificate renewal, compliance reporting, log archival.</li>
+              <li>Tuned Linux performance via kernel parameter optimization, ulimit configuration, and storage I/O tuning for application workloads.</li>
+              <li>Administered AWS services (EC2, S3, RDS, IAM, CloudWatch) following least-privilege access and tag-based governance.</li>
+              <li>Supported containerized workloads with Docker and Kubernetes where required by application deployments.</li>
+              <li>Created operational documentation and SOPs for patching, monitoring, and incident recovery workflows.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section">
+  <div class="container">
+    <header class="section-header reveal">
+      <span class="section-eyebrow mono">technical stack</span>
+      <h2 class="section-title">The toolbox.</h2>
+      <span class="section-line"></span>
+    </header>
+
+    <div class="skill-grid">
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><div class="skill-cat-icon">☁</div><div><h4>Cloud · AWS</h4><div class="skill-cat-sub">primary platform</div></div></div>
+        <div class="skill-list"><span>EC2</span><span>S3</span><span>RDS</span><span>VPC</span><span>IAM</span><span>Lambda</span><span>CloudWatch</span><span>CloudFront</span><span>ECS</span><span>EKS</span><span>Auto Scaling</span><span>Secrets Manager</span><span>SSM</span><span>Route 53</span><span>ALB</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><div class="skill-cat-icon">A</div><div><h4>Cloud · Azure</h4><div class="skill-cat-sub">secondary</div></div></div>
+        <div class="skill-list"><span>Virtual Machines</span><span>Networking</span><span>Storage</span><span>Backup</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><div class="skill-cat-icon">{ }</div><div><h4>Infrastructure as Code</h4><div class="skill-cat-sub">declarative provisioning</div></div></div>
+        <div class="skill-list"><span>Terraform</span><span>Ansible</span><span>CloudFormation</span><span>Helm</span><span>Modules</span><span>Roles</span><span>Inventory</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><div class="skill-cat-icon">⎈</div><div><h4>Containers · Orchestration</h4><div class="skill-cat-sub">runtime + scheduling</div></div></div>
+        <div class="skill-list"><span>Docker</span><span>Kubernetes</span><span>EKS</span><span>Helm</span><span>HPA</span><span>RBAC</span><span>docker-compose</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><div class="skill-cat-icon">$_</div><div><h4>Linux Administration</h4><div class="skill-cat-sub">deep host-level expertise</div></div></div>
+        <div class="skill-list"><span>RHEL 7/8/9</span><span>Ubuntu</span><span>CentOS</span><span>systemd</span><span>SELinux</span><span>firewalld</span><span>iptables</span><span>cron</span><span>APT/YUM/DNF</span><span>kickstart</span><span>sysctl</span><span>ulimit</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><div class="skill-cat-icon">▤</div><div><h4>Storage · Filesystems</h4><div class="skill-cat-sub">data layer</div></div></div>
+        <div class="skill-list"><span>LVM</span><span>XFS</span><span>ext4</span><span>NFS</span><span>multipath</span><span>RAID</span><span>EBS</span><span>NAS</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><div class="skill-cat-icon">↻</div><div><h4>Backup · DR</h4><div class="skill-cat-sub">resilience</div></div></div>
+        <div class="skill-list"><span>AWS Backup</span><span>EBS Snapshots</span><span>RDS Snapshots</span><span>rsync</span><span>99.9% SLA</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><div class="skill-cat-icon">◉</div><div><h4>Monitoring · Logging</h4><div class="skill-cat-sub">observability</div></div></div>
+        <div class="skill-list"><span>CloudWatch</span><span>Prometheus</span><span>Grafana</span><span>ELK</span><span>Datadog</span><span>Splunk</span><span>Nagios</span><span>Zabbix</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><div class="skill-cat-icon">⟳</div><div><h4>CI/CD · Automation</h4><div class="skill-cat-sub">delivery pipelines</div></div></div>
+        <div class="skill-list"><span>GitLab CI</span><span>GitHub Actions</span><span>Trivy</span><span>SonarQube</span><span>Bash</span><span>Python</span><span>Perl</span><span>YAML</span><span>JSON</span><span>PowerShell</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><div class="skill-cat-icon">⚿</div><div><h4>Security · IAM</h4><div class="skill-cat-sub">defense in depth</div></div></div>
+        <div class="skill-list"><span>IAM Least-Priv</span><span>RBAC</span><span>KMS</span><span>HashiCorp Vault</span><span>SSL/TLS</span><span>SSH Hardening</span><span>fail2ban</span><span>auditd</span><span>LDAP</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><div class="skill-cat-icon">⇄</div><div><h4>Networking</h4><div class="skill-cat-sub">L3/L4</div></div></div>
+        <div class="skill-list"><span>DNS</span><span>DHCP</span><span>TCP/IP</span><span>SSH</span><span>VPN</span><span>Load Balancing</span><span>Security Groups</span><span>NACLs</span></div>
+      </div>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><div class="skill-cat-icon">⌥</div><div><h4>Versioning · ITSM</h4><div class="skill-cat-sub">collaboration</div></div></div>
+        <div class="skill-list"><span>Git</span><span>GitHub</span><span>GitLab</span><span>ServiceNow</span><span>Freshservice</span><span>JIRA</span><span>Confluence</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="creds" class="section">
+  <div class="container">
+    <header class="section-header reveal">
+      <span class="section-eyebrow mono">credentials</span>
+      <h2 class="section-title">Verified.</h2>
+      <span class="section-line"></span>
+    </header>
+
+    <div class="cred-grid">
+      <div class="cert reveal">
+        <div class="cert-badge">CCP</div>
+        <div class="cert-info"><h4>AWS Certified Cloud Practitioner</h4><p>foundational · cloud concepts · billing</p></div>
+      </div>
+      <div class="cert reveal">
+        <div class="cert-badge">SAA</div>
+        <div class="cert-info"><h4>AWS Certified Solutions Architect — Associate</h4><p>architecting on aws · well-architected</p></div>
+      </div>
+    </div>
+
+    <div class="edu-grid">
+      <div class="edu reveal">
+        <div class="edu-degree">M.S. Computer Science</div>
+        <div class="edu-school">Campbellsville University, Kentucky · USA</div>
+        <div class="edu-meta"><span>Aug 2022 — Aug 2024</span><span class="edu-gpa">CGPA · 4.0 / 4.0</span></div>
+      </div>
+      <div class="edu reveal">
+        <div class="edu-degree">B.E. Electronics &amp; Communication Engineering</div>
+        <div class="edu-school">Osmania University, Hyderabad · India</div>
+        <div class="edu-meta"><span>Aug 2016 — Sep 2020</span><span class="edu-gpa">CGPA · 8 / 10</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-eyebrow mono">// 06 — let's talk</div>
+  <h2 class="contact-title">Looking for a Cloud or <em>DevOps engineer</em> who ships?</h2>
+  <p class="contact-sub">Open to remote &amp; relocation across the U.S. F-1 STEM OPT authorized — multi-year work eligibility, no immediate sponsorship needed.</p>
+
+  <div class="contact-cta">
+    <a class="btn btn-primary" href="mailto:masattar0782@gmail.com?subject=Opportunity%20—%20Cloud%2FDevOps%20role">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email me directly
+    </a>
+    <a class="btn btn-ghost" href="assets/docs/abdul-sattar-resume.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download résumé
+    </a>
+  </div>
+
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:masattar0782@gmail.com">
+      <div class="contact-card-label">email</div>
+      <div class="contact-card-val">masattar0782@gmail.com</div>
+    </a>
+    <a class="contact-card" href="tel:+13467144279">
+      <div class="contact-card-label">phone</div>
+      <div class="contact-card-val">+1 346 714 4279</div>
+    </a>
+    <div class="contact-card">
+      <div class="contact-card-label">location</div>
+      <div class="contact-card-val">Houston, TX 77054</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-status">Production stable · last deploy today</span>
+    <span>© 2026 Abdul Sattar Mohammed</span>
+    <span>Built with HTML · CSS · vanilla JS · zero frameworks</span>
+  </div>
+</footer>
+
+<div class="cmdk-overlay" id="cmdkOverlay" role="dialog" aria-modal="true" aria-labelledby="cmdkInput">
+  <div class="cmdk">
+    <div class="cmdk-input-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input class="cmdk-input" id="cmdkInput" type="text" placeholder="Type a command or jump to a section…" autocomplete="off" />
+      <kbd>ESC</kbd>
+    </div>
+    <div class="cmdk-list" id="cmdkList"></div>
+    <div class="cmdk-foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> select</span>
+      <span><kbd>esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  // ---------- Theme toggle ----------
+  var root=document.documentElement;
+  var stored=null;
+  try{stored=localStorage.getItem('theme')}catch(e){}
+  if(!stored){
+    stored=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+  }
+  root.setAttribute('data-theme',stored);
+  var themeBtn=document.getElementById('themeToggle');
+  if(themeBtn){
+    themeBtn.addEventListener('click',function(){
+      var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+      root.setAttribute('data-theme',next);
+      try{localStorage.setItem('theme',next)}catch(e){}
+    });
+  }
+
+  // ---------- Scroll progress + nav scrolled state ----------
+  var bar=document.getElementById('scrollProgress');
+  var nav=document.getElementById('nav');
+  function onScroll(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    var pct=max>0?(h.scrollTop/max)*100:0;
+    if(bar) bar.style.width=pct+'%';
+    if(nav) nav.classList.toggle('scrolled',h.scrollTop>20);
+  }
+  document.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  // ---------- Reveal on scroll ----------
+  var reveals=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(function(el){io.observe(el)});
+  }else{
+    reveals.forEach(function(el){el.classList.add('visible')});
+  }
+
+  // ---------- Stat counter animation ----------
+  function animateNum(el){
+    var target=parseFloat(el.getAttribute('data-target'))||0;
+    var decimals=parseInt(el.getAttribute('data-decimal'),10)||0;
+    var prefix=el.getAttribute('data-prefix')||'';
+    var dur=1400, t0=null;
+    function ease(t){return 1-Math.pow(1-t,3)}
+    function step(ts){
+      if(!t0) t0=ts;
+      var p=Math.min(1,(ts-t0)/dur);
+      var v=target*ease(p);
+      el.textContent=prefix+v.toFixed(decimals);
+      if(p<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window){
+    var so=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          animateNum(e.target);
+          so.unobserve(e.target);
+        }
+      });
+    },{threshold:0.5});
+    document.querySelectorAll('[data-num]').forEach(function(el){so.observe(el)});
+  }
+
+  // ---------- Experience accordion ----------
+  document.querySelectorAll('.exp-head').forEach(function(head){
+    function toggle(){
+      var card=head.parentElement;
+      var open=card.classList.toggle('open');
+      head.setAttribute('aria-expanded',open?'true':'false');
+    }
+    head.addEventListener('click',toggle);
+    head.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}
+    });
+  });
+
+  // ---------- Project filter ----------
+  var chips=document.querySelectorAll('.filter-chip');
+  var projects=document.querySelectorAll('.project');
+  chips.forEach(function(chip){
+    chip.addEventListener('click',function(){
+      chips.forEach(function(c){c.classList.remove('active')});
+      chip.classList.add('active');
+      var f=chip.getAttribute('data-filter');
+      projects.forEach(function(p){
+        var tags=(p.getAttribute('data-tags')||'').split(/\s+/);
+        p.classList.toggle('hidden', f!=='all' && tags.indexOf(f)===-1);
+      });
+    });
+  });
+
+  // ---------- Active nav link (scroll-spy) ----------
+  var navLinks=document.querySelectorAll('.nav-links a[href^="#"]');
+  var sectionMap={};
+  navLinks.forEach(function(a){
+    var id=a.getAttribute('href').slice(1);
+    var sec=document.getElementById(id);
+    if(sec) sectionMap[id]={link:a,sec:sec};
+  });
+  if('IntersectionObserver' in window){
+    var no=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var id=e.target.id;
+        if(sectionMap[id] && e.isIntersecting){
+          navLinks.forEach(function(a){a.classList.remove('active')});
+          sectionMap[id].link.classList.add('active');
+        }
+      });
+    },{rootMargin:'-40% 0px -55% 0px',threshold:0});
+    Object.keys(sectionMap).forEach(function(k){no.observe(sectionMap[k].sec)});
+  }
+
+  // ---------- Mobile nav toggle ----------
+  var navToggle=document.getElementById('navToggle');
+  var navLinksEl=document.querySelector('.nav-links');
+  if(navToggle && navLinksEl){
+    navToggle.addEventListener('click',function(){
+      var open=navLinksEl.style.display==='flex';
+      navLinksEl.style.display=open?'':'flex';
+      navLinksEl.style.position=open?'':'absolute';
+      navLinksEl.style.top=open?'':'100%';
+      navLinksEl.style.left=open?'':'0';
+      navLinksEl.style.right=open?'':'0';
+      navLinksEl.style.background=open?'':'var(--bg-elev)';
+      navLinksEl.style.flexDirection=open?'':'column';
+      navLinksEl.style.padding=open?'':'var(--s-4)';
+      navLinksEl.style.borderBottom=open?'':'1px solid var(--line)';
+      navToggle.setAttribute('aria-expanded',open?'false':'true');
+    });
+    navLinksEl.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        if(window.innerWidth<=720){
+          navLinksEl.style.display='';
+          navToggle.setAttribute('aria-expanded','false');
+        }
+      });
+    });
+  }
+
+  // ---------- Command palette ----------
+  var commands=[
+    {label:'Jump to · About',group:'Navigate',icon:'→',action:function(){location.hash='#about'}},
+    {label:'Jump to · Selected work',group:'Navigate',icon:'→',action:function(){location.hash='#projects'}},
+    {label:'Jump to · Experience',group:'Navigate',icon:'→',action:function(){location.hash='#experience'}},
+    {label:'Jump to · Stack',group:'Navigate',icon:'→',action:function(){location.hash='#skills'}},
+    {label:'Jump to · Credentials',group:'Navigate',icon:'→',action:function(){location.hash='#creds'}},
+    {label:'Jump to · Contact',group:'Navigate',icon:'→',action:function(){location.hash='#contact'}},
+    {label:'Toggle theme · dark / light',group:'Actions',icon:'◐',action:function(){if(themeBtn) themeBtn.click()}},
+    {label:'Download résumé (PDF)',group:'Actions',icon:'↓',action:function(){location.href='assets/docs/abdul-sattar-resume.pdf'}},
+    {label:'Email · masattar0782@gmail.com',group:'Contact',icon:'@',action:function(){location.href='mailto:masattar0782@gmail.com'}},
+    {label:'Call · +1 346 714 4279',group:'Contact',icon:'☏',action:function(){location.href='tel:+13467144279'}},
+    {label:'GitHub profile',group:'Contact',icon:'⌥',action:function(){window.open('https://github.com/abdulsattar','_blank','noopener')}},
+    {label:'LinkedIn profile',group:'Contact',icon:'in',action:function(){window.open('https://www.linkedin.com/in/abdulsattar','_blank','noopener')}},
+    {label:'Print page',group:'Actions',icon:'⎙',action:function(){window.print()}}
+  ];
+  var overlay=document.getElementById('cmdkOverlay');
+  var input=document.getElementById('cmdkInput');
+  var list=document.getElementById('cmdkList');
+  var trigger=document.getElementById('cmdTrigger');
+  var activeIdx=0, filtered=commands.slice();
+
+  function renderList(){
+    if(!list) return;
+    if(!filtered.length){
+      list.innerHTML='<div class="cmdk-empty">No commands match.</div>';
+      return;
+    }
+    var html='', currentGroup=null;
+    filtered.forEach(function(c,i){
+      if(c.group!==currentGroup){
+        html+='<div class="cmdk-group-label">'+c.group+'</div>';
+        currentGroup=c.group;
+      }
+      html+='<div class="cmdk-item'+(i===activeIdx?' active':'')+'" data-i="'+i+'">'+
+        '<span class="cmdk-item-icon">'+c.icon+'</span>'+
+        '<span>'+c.label+'</span>'+
+      '</div>';
+    });
+    list.innerHTML=html;
+    list.querySelectorAll('.cmdk-item').forEach(function(el){
+      el.addEventListener('mouseenter',function(){
+        activeIdx=parseInt(el.getAttribute('data-i'),10);
+        list.querySelectorAll('.cmdk-item').forEach(function(x){x.classList.remove('active')});
+        el.classList.add('active');
+      });
+      el.addEventListener('click',function(){runActive()});
+    });
+  }
+  function filterList(q){
+    q=(q||'').trim().toLowerCase();
+    if(!q){filtered=commands.slice()}
+    else{
+      filtered=commands.filter(function(c){
+        return c.label.toLowerCase().indexOf(q)!==-1 || c.group.toLowerCase().indexOf(q)!==-1;
+      });
+    }
+    activeIdx=0;
+    renderList();
+  }
+  function openCmdk(){
+    if(!overlay) return;
+    overlay.classList.add('open');
+    filterList('');
+    setTimeout(function(){if(input){input.value='';input.focus()}},20);
+  }
+  function closeCmdk(){
+    if(!overlay) return;
+    overlay.classList.remove('open');
+  }
+  function runActive(){
+    var c=filtered[activeIdx];
+    if(c){closeCmdk();setTimeout(c.action,80)}
+  }
+  if(trigger) trigger.addEventListener('click',openCmdk);
+  if(input){
+    input.addEventListener('input',function(){filterList(input.value)});
+    input.addEventListener('keydown',function(e){
+      if(e.key==='ArrowDown'){e.preventDefault();activeIdx=Math.min(filtered.length-1,activeIdx+1);renderList()}
+      else if(e.key==='ArrowUp'){e.preventDefault();activeIdx=Math.max(0,activeIdx-1);renderList()}
+      else if(e.key==='Enter'){e.preventDefault();runActive()}
+      else if(e.key==='Escape'){e.preventDefault();closeCmdk()}
+    });
+  }
+  if(overlay){
+    overlay.addEventListener('click',function(e){if(e.target===overlay) closeCmdk()});
+  }
+  document.addEventListener('keydown',function(e){
+    if((e.metaKey||e.ctrlKey) && (e.key==='k'||e.key==='K')){
+      e.preventDefault();
+      if(overlay && overlay.classList.contains('open')) closeCmdk(); else openCmdk();
+    }
+    if(e.key==='Escape' && overlay && overlay.classList.contains('open')) closeCmdk();
+  });
+
+})();
+</script>
+
+</body>
+</html>
